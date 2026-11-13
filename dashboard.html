@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player Dashboard — COURTLY Basketball Academy | Athletic Command Center</title>
+  <meta name="description" content="Manage your basketball training, track kinetic shooting statistics, schedule private coach workouts, and register for tournaments.">
+
+    <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            orange: {
+              400: '#F3C04A',
+              500: '#D4AF37',
+              600: '#C59427',
+            },
+            court: {
+              charcoal: '#12161C',
+              dark: '#0A0D12',
+              surface: '#151B24',
+              border: '#252F3D',
+              gold: '#D4AF37',
+              goldHover: '#C59427',
+              goldLight: '#F3C04A',
+              cream: '#FDFBF7',
+              grey: '#8E959E',
+              lightBg: '#F8F9FA',
+              lightSurface: '#FFFFFF',
+              lightBorder: '#E2E6EA',
+            }
+          },
+          fontFamily: {
+            display: ['"Barlow Condensed"', 'sans-serif'],
+            heading: ['"Space Grotesk"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Chart.js CDN for Interactive Athletic Analytics -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dark bg-[#0A0D11] text-slate-100 font-body antialiased flex h-screen overflow-hidden selection:bg-[#D4AF37] selection:text-black">
+
+  <!-- ==========================================================================
+       DASHBOARD SIDEBAR (12 MODULES)
+       ========================================================================== -->
+  <aside id="dashboardSidebar" class="w-72 bg-[#11151B] border-r border-theme flex flex-col justify-between fixed lg:static inset-y-0 left-0 z-40 transition-transform duration-300 -translate-x-full lg:translate-x-0 shadow-2xl">
+    
+    <!-- Top Brand Header -->
+    <div class="p-6 border-b border-theme/60">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#C59427] to-[#F3C04A] flex items-center justify-center shadow-lg shadow-amber-500/25 group-hover:scale-105 transition-transform">
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M4.93 4.93l4.24 4.24"></path>
+            <path d="M14.83 9.17l4.24-4.24"></path>
+            <path d="M14.83 14.83l4.24 4.24"></path>
+            <path d="M9.17 14.83L4.93 19.07"></path>
+            <circle cx="12" cy="12" r="4"></circle>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-black text-xl sm:text-2xl tracking-wider leading-none text-white dark:text-white group-hover:text-orange-500 transition-colors">COURTLY</span>
+          <span class="text-[9px] sm:text-[10px] uppercase font-bold tracking-[0.25em] text-orange-400">Basketball Academy</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- 12 Navigation Items Menu (Scrollable) -->
+    <nav class="flex-1 px-4 py-4 space-y-1 overflow-y-auto">
+      
+      <!-- 1. Overview -->
+      <a href="#overview" data-target="overview" data-title="Athletic Overview" class="dashboard-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all bg-orange-500 text-white shadow-lg">
+        <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+        <span>Overview</span>
+      </a>
+
+      <!-- 2. My Profile -->
+      <a href="#my-profile" data-target="my-profile" data-title="Athlete Profile & Biometrics" class="dashboard-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all text-slate-400 hover:bg-slate-800/60 hover:text-white">
+        <i data-lucide="user" class="w-4 h-4"></i>
+        <span>My Profile</span>
+      </a>
+
+      <!-- 3. Training Programs -->
+      <a href="#training-programs" data-target="training-programs" data-title="Active Training Syllabi" class="dashboard-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all text-slate-400 hover:bg-slate-800/60 hover:text-white">
+        <i data-lucide="layers" class="w-4 h-4"></i>
+        <span>Training Programs</span>
+      </a>
+
+      <!-- 4. Book Sessions -->
+      <a href="#book-sessions" data-target="book-sessions" data-title="Reserve Court Session" class="dashboard-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all text-slate-400 hover:bg-slate-800/60 hover:text-white">
+        <i data-lucide="calendar-plus" class="w-4 h-4"></i>
+        <span>Book Sessions</span>
+      </a>
+
+      <!-- 5. My Bookings -->
+      <a href="#my-bookings" data-target="my-bookings" data-title="Reserved Workouts" class="dashboard-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all text-slate-400 hover:bg-slate-800/60 hover:text-white">
+        <i data-lucide="calendar-check" class="w-4 h-4"></i>
+        <span>My Bookings</span>
+      </a>
+
+      <!-- 6. Skill Progress -->
+      <a href="#skill-progress" data-target="skill-progress" data-title="Player Skill Progression" class="dashboard-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all text-slate-400 hover:bg-slate-800/60 hover:text-white">
+        <i data-lucide="trending-up" class="w-4 h-4"></i>
+        <span>Skill Progress</span>
+      </a>
+
+      <!-- 7. Performance Statistics -->
+      <a href="#performance-statistics" data-target="performance-statistics" data-title="Shot Telemetry & Field Goal %" class="dashboard-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all text-slate-400 hover:bg-slate-800/60 hover:text-white">
+        <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
+        <span>Performance Stats</span>
+      </a>
+
+      <!-- 8. League Registration -->
+      <a href="#league-registration" data-target="league-registration" data-title="Tournament & Circuit Registrations" class="dashboard-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all text-slate-400 hover:bg-slate-800/60 hover:text-white">
+        <i data-lucide="trophy" class="w-4 h-4"></i>
+        <span>League Registration</span>
+      </a>
+
+      <!-- 9. Upcoming Events -->
+      <a href="#upcoming-events" data-target="upcoming-events" data-title="Academy Showcases & Events" class="dashboard-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all text-slate-400 hover:bg-slate-800/60 hover:text-white">
+        <i data-lucide="calendar" class="w-4 h-4"></i>
+        <span>Upcoming Events</span>
+      </a>
+
+      <!-- 10. Notifications -->
+      <a href="#notifications" data-target="notifications" data-title="Athlete Alerts & Coach Notes" class="dashboard-nav-item flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all text-slate-400 hover:bg-slate-800/60 hover:text-white">
+        <div class="flex items-center gap-3">
+          <i data-lucide="bell" class="w-4 h-4"></i>
+          <span>Notifications</span>
+        </div>
+        <span class="w-5 h-5 rounded-full bg-orange-500 text-white text-[10px] flex items-center justify-center font-mono">3</span>
+      </a>
+
+      <!-- 11. Settings -->
+      <a href="#settings" data-target="settings" data-title="Athlete Account Settings" class="dashboard-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all text-slate-400 hover:bg-slate-800/60 hover:text-white">
+        <i data-lucide="settings" class="w-4 h-4"></i>
+        <span>Settings</span>
+      </a>
+
+      <!-- 12. Logout -->
+      <a href="index.html" data-target="logout" class="dashboard-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all text-red-400 hover:bg-red-500/10">
+        <i data-lucide="log-out" class="w-4 h-4"></i>
+        <span>Logout</span>
+      </a>
+
+    </nav>
+
+    <!-- Bottom Athlete Mini Profile Summary -->
+    <div class="p-4 border-t border-theme/60 bg-[#0D1015]">
+      <div class="flex items-center gap-3">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80" alt="Marcus Vance" class="w-10 h-10 rounded-xl object-cover border border-orange-500/50">
+        <div class="flex-1 min-w-0">
+          <h5 class="text-xs font-bold text-white truncate player-name-text">Marcus Vance</h5>
+          <span class="text-[10px] font-mono text-orange-400 block player-id-text">CT-2026-88</span>
+        </div>
+        <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 uppercase">Tier 1</span>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ==========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================== -->
+  <div class="flex-1 flex flex-col h-screen overflow-hidden">
+    
+    <!-- Dashboard Top Bar -->
+    <header class="h-16 bg-[#11151B] border-b border-theme px-4 sm:px-8 flex items-center justify-between flex-shrink-0">
+      
+      <div class="flex items-center gap-4">
+        <!-- Mobile Sidebar Toggler -->
+        <button id="dashboardSidebarToggle" class="lg:hidden w-9 h-9 rounded-lg bg-surface border border-theme flex items-center justify-center text-slate-300 hover:text-orange-400">
+          <i data-lucide="menu" class="w-4 h-4"></i>
+        </button>
+        <h2 id="dashboardPageTitle" class="text-lg sm:text-xl font-display font-black uppercase text-white tracking-wider">Athletic Overview</h2>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <!-- Back to Public Site link -->
+        <a href="index.html" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-theme text-xs font-bold uppercase text-slate-300 hover:text-orange-400 hover:border-orange-500/40 transition-all">
+          <i data-lucide="globe" class="w-3.5 h-3.5"></i>
+          <span>Public Academy</span>
+        </a>
+
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn w-9 h-9 rounded-lg bg-surface border border-theme flex items-center justify-center text-slate-300 hover:text-orange-400 hover:border-orange-500/50 transition-all" aria-label="Toggle theme">
+          <span class="theme-icon"><i data-lucide="sun" class="w-4 h-4"></i></span>
+        </button>
+
+        <!-- RTL Toggle with Bidirectional Arrows Icon -->
+        <button class="rtl-toggle-btn w-9 h-9 rounded-lg bg-surface border border-theme flex items-center justify-center text-slate-300 hover:text-orange-400 hover:border-orange-500/50 transition-all" aria-label="Toggle layout direction" title="Toggle RTL/LTR Direction">
+          <span class="rtl-toggle-icon flex items-center justify-center">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m16 3 4 4-4 4"/>
+              <path d="M20 7H4"/>
+              <path d="m8 21-4-4 4-4"/>
+              <path d="M4 17h16"/>
+            </svg>
+          </span>
+          <span class="sr-only rtl-toggle-text">RTL</span>
+        </button>
+
+        <!-- Quick Book Button -->
+        <button onclick="document.querySelector('[data-target=\'book-sessions\']').click()" class="btn-court-primary px-3.5 py-1.5 rounded-lg text-xs uppercase font-bold tracking-wider hidden sm:inline-flex">
+          <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+          <span>Book Workout</span>
+        </button>
+      </div>
+
+    </header>
+
+    <!-- Scrollable Workspace for all 11 Views -->
+    <main class="flex-1 overflow-y-auto p-4 sm:p-8 bg-[#0A0D11] space-y-8">
+      
+      <!-- ====================================================================
+           MODULE 1: OVERVIEW (Default Active)
+           Personalized welcome, profile summary, upcoming sessions, stats, charts, coach notes
+           ==================================================================== -->
+      <section id="overview" class="dashboard-section space-y-8">
+        
+        <!-- Welcome Hero Banner -->
+        <div id="dashboardHeroBanner" class="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#1E252E] via-[#15191E] to-[#12161C] border border-orange-500/30 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden">
+          <div class="z-10">
+            <span class="text-xs font-mono text-orange-400 font-bold uppercase tracking-wider block mb-1">Courtly Performance Portal // Active Session</span>
+            <h1 class="text-3xl sm:text-4xl font-display font-black uppercase text-white tracking-tight">
+              Welcome Back, <span class="text-orange-500 player-name-text">Marcus Vance</span>
+            </h1>
+            <p class="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl">
+              Next scheduled workout: <strong class="text-orange-400">Shooting & Scoring Mastery</strong> on Court Alpha at 16:00.
+            </p>
+          </div>
+          <div class="flex items-center gap-3 z-10 w-full md:w-auto">
+            <button onclick="document.querySelector('[data-target=\'book-sessions\']').click()" class="btn-court-primary px-6 py-3 rounded-xl text-xs uppercase font-bold tracking-wider w-full md:w-auto">
+              Schedule Practice
+            </button>
+            <button onclick="document.querySelector('[data-target=\'performance-statistics\']').click()" class="px-6 py-3 rounded-xl bg-surface border border-theme text-xs uppercase font-bold text-slate-200 hover:text-white transition-all w-full md:w-auto">
+              Telemetry Data
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 Key Stat Badges -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div class="p-5 rounded-2xl bg-surface border border-theme">
+            <div class="flex items-center justify-between text-slate-400 mb-2">
+              <span class="text-xs font-bold uppercase">Sessions Done</span>
+              <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+            </div>
+            <div class="font-display font-black text-3xl sm:text-4xl text-white">48</div>
+            <span class="text-[10px] text-emerald-400 font-bold font-mono">96 Hours on Court</span>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-surface border border-theme">
+            <div class="flex items-center justify-between text-slate-400 mb-2">
+              <span class="text-xs font-bold uppercase">Current Skill Level</span>
+              <i data-lucide="award" class="w-4 h-4 text-orange-500"></i>
+            </div>
+            <div class="font-display font-black text-3xl sm:text-4xl text-orange-500">Tier 1</div>
+            <span class="text-[10px] text-slate-400 font-mono">Varsity Elite Status</span>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-surface border border-theme">
+            <div class="flex items-center justify-between text-slate-400 mb-2">
+              <span class="text-xs font-bold uppercase">Attendance Rate</span>
+              <i data-lucide="clock" class="w-4 h-4 text-blue-400"></i>
+            </div>
+            <div class="font-display font-black text-3xl sm:text-4xl text-white">94%</div>
+            <span class="text-[10px] text-emerald-400 font-bold font-mono">+4% vs Last Month</span>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-surface border border-theme">
+            <div class="flex items-center justify-between text-slate-400 mb-2">
+              <span class="text-xs font-bold uppercase">Field Goal Accuracy</span>
+              <i data-lucide="target" class="w-4 h-4 text-orange-500"></i>
+            </div>
+            <div class="font-display font-black text-3xl sm:text-4xl text-orange-500">55.1%</div>
+            <span class="text-[10px] text-emerald-400 font-bold font-mono">Career High</span>
+          </div>
+        </div>
+
+        <!-- Charts Grid: Skill Radar + Attendance / Performance Line -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
+          <!-- Skill Radar Chart -->
+          <div class="lg:col-span-5 p-6 rounded-3xl bg-surface border border-theme">
+            <div class="flex items-center justify-between mb-4">
+              <h4 class="text-base font-display font-black uppercase text-white">Biomechanical Skill Radar</h4>
+              <span class="text-xs font-mono text-orange-400">Composite: 88</span>
+            </div>
+            <div class="relative h-64 sm:h-72">
+              <canvas id="skillRadarChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Performance Trend Chart -->
+          <div class="lg:col-span-7 p-6 rounded-3xl bg-surface border border-theme">
+            <div class="flex items-center justify-between mb-4">
+              <h4 class="text-base font-display font-black uppercase text-white">Shooting Efficiency Over Time</h4>
+              <span class="text-xs font-mono text-slate-400">Past 6 Months</span>
+            </div>
+            <div class="relative h-64 sm:h-72">
+              <canvas id="performanceTrendChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Upcoming Sessions Strip + Coach Feedback -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
+          <!-- Next Sessions -->
+          <div class="lg:col-span-7 p-6 rounded-3xl bg-surface border border-theme">
+            <div class="flex items-center justify-between mb-4">
+              <h4 class="text-base font-display font-black uppercase text-white">Upcoming Training Sessions</h4>
+              <button onclick="document.querySelector('[data-target=\'book-sessions\']').click()" class="text-xs text-orange-400 hover:text-orange-300 font-bold">+ Book Another</button>
+            </div>
+            <div id="overviewRecentSessions" class="space-y-3">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Coach Feedback Notes -->
+          <div class="lg:col-span-5 p-6 rounded-3xl bg-surface border border-theme flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="text-base font-display font-black uppercase text-white">Head Coach Feedback</h4>
+                <span class="text-xs text-slate-400 font-mono">Yesterday</span>
+              </div>
+              <div class="p-4 rounded-2xl bg-black/40 border border-theme mb-4">
+                <div class="flex items-center gap-3 mb-2">
+                  <div class="w-8 h-8 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold text-xs">MH</div>
+                  <div>
+                    <h5 class="text-xs font-bold text-white">Coach Marcus Hayes</h5>
+                    <span class="text-[10px] text-orange-400">Head of Player Development</span>
+                  </div>
+                </div>
+                <p class="text-xs text-slate-300 italic leading-relaxed">
+                  "Marcus's release latency improved from 0.44s to 0.38s in yesterday's flare-screen drills. Continue working on planting the inside foot firmly on baseline cuts."
+                </p>
+              </div>
+            </div>
+            <div class="pt-3 border-t border-theme/60 flex items-center justify-between text-xs text-slate-400">
+              <span>Next Film Review: <strong>Thursday 17:00</strong></span>
+              <button onclick="showCourtlyToast('Coach Chat', 'Opening direct message channel with Coach Marcus...', 'info')" class="text-orange-400 font-bold hover:underline">Reply to Coach</button>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           MODULE 2: MY PROFILE
+           Athlete details, physical metrics, editable form
+           ==================================================================== -->
+      <section id="my-profile" class="dashboard-section hidden space-y-8">
+        
+        <div class="p-8 rounded-3xl bg-surface border border-theme">
+          <div class="flex flex-col sm:flex-row items-center gap-6 pb-8 border-b border-theme/60">
+            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80" alt="Marcus Vance" class="w-24 h-24 rounded-2xl object-cover border-2 border-orange-500 shadow-xl">
+            <div class="text-center sm:text-left">
+              <div class="flex items-center justify-center sm:justify-start gap-2 mb-1">
+                <h3 class="text-2xl font-display font-black uppercase text-white player-name-text">Marcus Vance</h3>
+                <span class="px-2 py-0.5 rounded bg-orange-500/20 text-orange-400 text-xs font-bold font-mono player-jersey-text">#07</span>
+              </div>
+              <p class="text-xs text-slate-400 player-pos-text">Point Guard / Shooting Guard • U-21 Elite</p>
+              <span class="inline-block mt-2 px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                Academy Status: Tier 1 Active
+              </span>
+            </div>
+          </div>
+
+          <form id="profileEditForm" class="pt-8 space-y-6">
+            <h4 class="text-base font-display font-black uppercase text-white">Athlete Metrics & Contact</h4>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-400 mb-1.5">Full Name</label>
+                <input type="text" id="profileFullName" class="w-full px-4 py-2.5 rounded-xl bg-black/40 border border-theme text-sm text-white">
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-400 mb-1.5">Email</label>
+                <input type="email" id="profileEmail" class="w-full px-4 py-2.5 rounded-xl bg-black/40 border border-theme text-sm text-white">
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-400 mb-1.5">Phone</label>
+                <input type="tel" id="profilePhone" class="w-full px-4 py-2.5 rounded-xl bg-black/40 border border-theme text-sm text-white">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-400 mb-1.5">Primary Position</label>
+                <input type="text" id="profilePosition" class="w-full px-4 py-2.5 rounded-xl bg-black/40 border border-theme text-sm text-white">
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-400 mb-1.5">Jersey Number</label>
+                <input type="text" id="profileJersey" class="w-full px-4 py-2.5 rounded-xl bg-black/40 border border-theme text-sm text-white">
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-400 mb-1.5">Height</label>
+                <input type="text" id="profileHeight" class="w-full px-4 py-2.5 rounded-xl bg-black/40 border border-theme text-sm text-white">
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-400 mb-1.5">Weight</label>
+                <input type="text" id="profileWeight" class="w-full px-4 py-2.5 rounded-xl bg-black/40 border border-theme text-sm text-white">
+              </div>
+            </div>
+
+            <button type="submit" class="btn-court-primary px-6 py-3 rounded-xl text-xs uppercase font-bold tracking-wider">
+              Save Profile Metrics
+            </button>
+          </form>
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           MODULE 3: TRAINING PROGRAMS
+           Browse enrolled & recommended training curriculums
+           ==================================================================== -->
+      <section id="training-programs" class="dashboard-section hidden space-y-6">
+        
+        <div class="flex items-center justify-between">
+          <h3 class="text-xl font-display font-black uppercase text-white">Active Training Tracks</h3>
+          <span class="text-xs font-mono text-slate-400">3 Tracks Active</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 grid-3-cards">
+          
+          <div class="p-6 rounded-3xl bg-surface border border-theme card-hover-fx">
+            <span class="text-[10px] font-mono text-orange-400 font-bold uppercase block mb-1">Track 01</span>
+            <h4 class="text-lg font-display font-black uppercase text-white mb-2">Kinetic Shooting Mastery</h4>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">Focus on release angle, catch-and-shoot latency, and contested mid-range pullups.</p>
+            <div class="w-full bg-slate-800 h-2 rounded-full mb-3">
+              <div class="bg-orange-500 h-full rounded-full" style="width: 75%"></div>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-400">
+              <span>Progress: <strong>75% Done</strong></span>
+              <span class="text-white font-mono">18 / 24 Wkts</span>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-surface border border-theme card-hover-fx">
+            <span class="text-[10px] font-mono text-orange-400 font-bold uppercase block mb-1">Track 02</span>
+            <h4 class="text-lg font-display font-black uppercase text-white mb-2">On-Ball Lockdown Defense</h4>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">Lateral slides, closeouts without fouling, and perimeter help-side rotations.</p>
+            <div class="w-full bg-slate-800 h-2 rounded-full mb-3">
+              <div class="bg-orange-500 h-full rounded-full" style="width: 60%"></div>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-400">
+              <span>Progress: <strong>60% Done</strong></span>
+              <span class="text-white font-mono">12 / 20 Wkts</span>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-surface border border-theme card-hover-fx">
+            <span class="text-[10px] font-mono text-orange-400 font-bold uppercase block mb-1">Track 03</span>
+            <h4 class="text-lg font-display font-black uppercase text-white mb-2">Speed, Agility & Footwork</h4>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">Sprint deceleration mechanics, box jump explosion, and VertiMax resistance reps.</p>
+            <div class="w-full bg-slate-800 h-2 rounded-full mb-3">
+              <div class="bg-orange-500 h-full rounded-full" style="width: 88%"></div>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-400">
+              <span>Progress: <strong>88% Done</strong></span>
+              <span class="text-white font-mono">14 / 16 Wkts</span>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           MODULE 4: BOOK SESSIONS (Interactive Booking Form)
+           Select program, coach, date, slot, court, instant add to localStorage
+           ==================================================================== -->
+      <section id="book-sessions" class="dashboard-section hidden space-y-6">
+        
+        <div class="max-w-2xl mx-auto p-8 rounded-3xl bg-surface border border-theme shadow-2xl">
+          <div class="mb-6">
+            <h3 class="text-2xl font-display font-black uppercase text-white">Book Private Training Session</h3>
+            <p class="text-xs text-slate-400 mt-1">Select your coaching mentor, target curriculum, and preferred hardwood court.</p>
+          </div>
+
+          <form id="dashboardBookingForm" class="space-y-4">
+            
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-300 mb-1.5">Select Training Program *</label>
+              <select id="bookProgram" required class="w-full px-4 py-3 rounded-xl bg-black/40 border border-theme text-sm text-white focus:outline-none focus:border-orange-500">
+                <option value="Shooting & Scoring Mastery">Shooting & Scoring Mastery</option>
+                <option value="Point Guard Ball-Handling Lab">Point Guard Ball-Handling Lab</option>
+                <option value="On-Ball Defensive Lockdown">On-Ball Defensive Lockdown</option>
+                <option value="Speed, Agility & Footwork Drill">Speed, Agility & Footwork Drill</option>
+                <option value="Combine 1-on-1 Pick & Roll">Combine 1-on-1 Pick & Roll</option>
+              </select>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-300 mb-1.5">Choose Coach *</label>
+                <select id="bookCoach" required class="w-full px-4 py-3 rounded-xl bg-black/40 border border-theme text-sm text-white focus:outline-none focus:border-orange-500">
+                  <option value="Head Coach Marcus Hayes">Head Coach Marcus Hayes</option>
+                  <option value="Coach Elena Rostova">Coach Elena Rostova (Shooting)</option>
+                  <option value="Coach Dave Miller">Coach Dave Miller (Defense)</option>
+                  <option value="Coach Jordan Taylor">Coach Jordan Taylor (S&C)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-300 mb-1.5">Target Court Area *</label>
+                <select id="bookCourt" required class="w-full px-4 py-3 rounded-xl bg-black/40 border border-theme text-sm text-white focus:outline-none focus:border-orange-500">
+                  <option value="Main Court Alpha">Main Court Alpha</option>
+                  <option value="Practice Court Beta">Practice Court Beta</option>
+                  <option value="Shooting Lab Bay 03">Shooting Lab Bay 03</option>
+                  <option value="Kinetic Turf Zone">Kinetic Turf Zone</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-300 mb-1.5">Session Date *</label>
+                <input type="date" id="bookDate" required value="2026-11-20" class="w-full px-4 py-3 rounded-xl bg-black/40 border border-theme text-sm text-white focus:outline-none focus:border-orange-500">
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-300 mb-1.5">Time Slot *</label>
+                <select id="bookTime" required class="w-full px-4 py-3 rounded-xl bg-black/40 border border-theme text-sm text-white focus:outline-none focus:border-orange-500">
+                  <option value="09:00 - 10:30">09:00 - 10:30 AM</option>
+                  <option value="11:00 - 12:30">11:00 - 12:30 PM</option>
+                  <option value="14:00 - 15:30">02:00 - 03:30 PM</option>
+                  <option value="16:00 - 17:30" selected>04:00 - 05:30 PM</option>
+                  <option value="18:00 - 19:30">06:00 - 07:30 PM</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="w-full btn-court-primary py-3.5 rounded-xl text-xs uppercase font-bold tracking-widest mt-2">
+              Confirm & Reserve Workout
+            </button>
+
+          </form>
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           MODULE 5: MY BOOKINGS
+           List of all sessions with Reschedule and Cancel buttons
+           ==================================================================== -->
+      <section id="my-bookings" class="dashboard-section hidden space-y-6">
+        
+        <div class="flex items-center justify-between">
+          <h3 class="text-xl font-display font-black uppercase text-white">Reserved Court Sessions</h3>
+          <button onclick="document.querySelector('[data-target=\'book-sessions\']').click()" class="btn-court-primary px-4 py-2 rounded-xl text-xs uppercase font-bold tracking-wider">
+            + Schedule New
+          </button>
+        </div>
+
+        <div class="rounded-3xl bg-surface border border-theme overflow-hidden shadow-2xl">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="border-b border-theme/60 bg-black/40 text-[10px] uppercase font-mono tracking-widest text-slate-400">
+                  <th class="py-3 px-4">Booking ID</th>
+                  <th class="py-3 px-4">Program</th>
+                  <th class="py-3 px-4">Coach</th>
+                  <th class="py-3 px-4">Date & Time</th>
+                  <th class="py-3 px-4">Status</th>
+                  <th class="py-3 px-4 text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="bookingsTableBody">
+                <!-- Injected via dashboard.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           MODULE 6: SKILL PROGRESS
+           Detailed breakdown across 6 specific categories
+           ==================================================================== -->
+      <section id="skill-progress" class="dashboard-section hidden space-y-6">
+        
+        <h3 class="text-xl font-display font-black uppercase text-white mb-2">Skill Progression Index</h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <div class="p-6 rounded-3xl bg-surface border border-theme space-y-6">
+            <div>
+              <div class="flex items-center justify-between text-xs font-bold uppercase mb-1.5">
+                <span>1. Shooting Accuracy (Perimeter & 3PT)</span>
+                <span class="text-orange-500 font-mono">86%</span>
+              </div>
+              <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                <div class="bg-orange-500 h-full rounded-full" style="width: 86%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between text-xs font-bold uppercase mb-1.5">
+                <span>2. Dribbling & Ball Handling Control</span>
+                <span class="text-orange-500 font-mono">92%</span>
+              </div>
+              <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                <div class="bg-orange-500 h-full rounded-full" style="width: 92%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between text-xs font-bold uppercase mb-1.5">
+                <span>3. Passing Accuracy & Floor Vision</span>
+                <span class="text-orange-500 font-mono">84%</span>
+              </div>
+              <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                <div class="bg-orange-500 h-full rounded-full" style="width: 84%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-surface border border-theme space-y-6">
+            <div>
+              <div class="flex items-center justify-between text-xs font-bold uppercase mb-1.5">
+                <span>4. Defensive Skills & Lateral Lockdown</span>
+                <span class="text-orange-500 font-mono">88%</span>
+              </div>
+              <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                <div class="bg-orange-500 h-full rounded-full" style="width: 88%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between text-xs font-bold uppercase mb-1.5">
+                <span>5. Speed, Agility & Footwork Burst</span>
+                <span class="text-orange-500 font-mono">90%</span>
+              </div>
+              <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                <div class="bg-orange-500 h-full rounded-full" style="width: 90%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between text-xs font-bold uppercase mb-1.5">
+                <span>6. Overall Performance Rating</span>
+                <span class="text-emerald-400 font-mono">89%</span>
+              </div>
+              <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                <div class="bg-gradient-to-r from-orange-500 to-emerald-400 h-full rounded-full" style="width: 89%"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           MODULE 7: PERFORMANCE STATISTICS
+           Weekly training volume bar chart + shot heat map
+           ==================================================================== -->
+      <section id="performance-statistics" class="dashboard-section hidden space-y-6">
+        
+        <h3 class="text-xl font-display font-black uppercase text-white">Kinetic Telemetry & Work Volume</h3>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div class="lg:col-span-8 p-6 rounded-3xl bg-surface border border-theme">
+            <h4 class="text-sm font-display font-black uppercase text-white mb-4">Weekly Court Minutes Volume</h4>
+            <div class="relative h-72">
+              <canvas id="trainingVolumeChart"></canvas>
+            </div>
+          </div>
+
+          <div class="lg:col-span-4 p-6 rounded-3xl bg-surface border border-theme flex flex-col justify-between">
+            <div>
+              <h4 class="text-sm font-display font-black uppercase text-white mb-3">Shooting Zone Heatmap</h4>
+              <div class="space-y-3 text-xs">
+                <div class="flex items-center justify-between p-2.5 rounded-xl bg-black/40 border border-theme">
+                  <span class="text-slate-300">Left Corner 3PT:</span>
+                  <strong class="text-emerald-400 font-mono">48.2% (Hot)</strong>
+                </div>
+                <div class="flex items-center justify-between p-2.5 rounded-xl bg-black/40 border border-theme">
+                  <span class="text-slate-300">Top of the Key 3PT:</span>
+                  <strong class="text-orange-400 font-mono">41.0%</strong>
+                </div>
+                <div class="flex items-center justify-between p-2.5 rounded-xl bg-black/40 border border-theme">
+                  <span class="text-slate-300">Right Corner 3PT:</span>
+                  <strong class="text-emerald-400 font-mono">46.5% (Hot)</strong>
+                </div>
+                <div class="flex items-center justify-between p-2.5 rounded-xl bg-black/40 border border-theme">
+                  <span class="text-slate-300">Mid-Range Elbow Pullup:</span>
+                  <strong class="text-emerald-400 font-mono">54.0%</strong>
+                </div>
+              </div>
+            </div>
+            <div class="pt-3 border-t border-theme/60 text-[10px] text-slate-400 font-mono">
+              Sensors: Dr. Dish CT Wireless Feed
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           MODULE 8: LEAGUE REGISTRATION
+           Interactive tournament registration directly from dashboard
+           ==================================================================== -->
+      <section id="league-registration" class="dashboard-section hidden space-y-6">
+        
+        <div class="flex items-center justify-between">
+          <h3 class="text-xl font-display font-black uppercase text-white">Active Tournaments & League Roster</h3>
+          <span class="text-xs text-slate-400">FIBA Sanctioned Competitions</span>
+        </div>
+
+        <div id="leaguesListContainer" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 grid-3-cards">
+          <!-- Rendered dynamically via dashboard.js -->
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           MODULE 9: UPCOMING EVENTS
+           Calendar of combines, showcases, guest pro clinics
+           ==================================================================== -->
+      <section id="upcoming-events" class="dashboard-section hidden space-y-6">
+        
+        <h3 class="text-xl font-display font-black uppercase text-white">Academy Calendar & Showcases</h3>
+
+        <div class="space-y-4">
+          <div class="p-5 rounded-2xl bg-surface border border-theme flex items-center justify-between">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-orange-500/15 text-orange-500 flex flex-col items-center justify-center font-bold text-xs">
+                <span>NOV</span>
+                <span class="text-base font-black">28</span>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">NCAA Collegiate Combine & Scouting Day</h4>
+                <p class="text-xs text-slate-400">Main Arena Alpha • Mandatory for Varsity Recruits</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Invited</span>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-surface border border-theme flex items-center justify-between">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-orange-500/15 text-orange-500 flex flex-col items-center justify-center font-bold text-xs">
+                <span>DEC</span>
+                <span class="text-base font-black">05</span>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Metro Winter Classic 2026 (Tip-Off)</h4>
+                <p class="text-xs text-slate-400">16-Team Regional Championship Showcase</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-orange-500/10 text-orange-400 border border-orange-500/20">Registered</span>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-surface border border-theme flex items-center justify-between">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-orange-500/15 text-orange-500 flex flex-col items-center justify-center font-bold text-xs">
+                <span>DEC</span>
+                <span class="text-base font-black">18</span>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">NBA Guest Clinician Shooting Masterclass</h4>
+                <p class="text-xs text-slate-400">Exclusive 2-hour workout with guest pro shooting coach</p>
+              </div>
+            </div>
+            <button onclick="showCourtlyToast('Event RSVP', 'RSVP registered for NBA Masterclass.', 'success')" class="btn-court-secondary px-3.5 py-1.5 rounded-lg text-xs font-bold uppercase">
+              RSVP Slot
+            </button>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           MODULE 10: NOTIFICATIONS
+           Alerts, schedule reminders, coach messages
+           ==================================================================== -->
+      <section id="notifications" class="dashboard-section hidden space-y-6">
+        
+        <div class="flex items-center justify-between">
+          <h3 class="text-xl font-display font-black uppercase text-white">Athlete Notifications</h3>
+          <button onclick="showCourtlyToast('Notifications', 'All notifications marked as read.', 'info')" class="text-xs text-orange-400 hover:underline font-bold">Mark All Read</button>
+        </div>
+
+        <div class="space-y-3">
+          <div class="p-4 rounded-2xl bg-surface border-l-4 border-l-orange-500 border-theme flex items-start gap-3">
+            <i data-lucide="bell" class="w-5 h-5 text-orange-500 mt-0.5 flex-shrink-0"></i>
+            <div>
+              <h5 class="text-xs font-bold text-white">Upcoming Session Reminder</h5>
+              <p class="text-xs text-slate-400 mt-0.5">Shooting & Scoring Mastery is scheduled tomorrow at 16:00 on Main Court Alpha.</p>
+              <span class="text-[10px] text-slate-400 font-mono mt-1 block">2 hours ago</span>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-surface border-l-4 border-l-emerald-500 border-theme flex items-start gap-3">
+            <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+            <div>
+              <h5 class="text-xs font-bold text-white">Tournament Registration Confirmed</h5>
+              <p class="text-xs text-slate-400 mt-0.5">Your spot on the Metro Winter Classic roster has been confirmed by tournament director.</p>
+              <span class="text-[10px] text-slate-400 font-mono mt-1 block">Yesterday</span>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-surface border-l-4 border-l-blue-500 border-theme flex items-start gap-3">
+            <i data-lucide="video" class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0"></i>
+            <div>
+              <h5 class="text-xs font-bold text-white">New Film Breakdown Uploaded</h5>
+              <p class="text-xs text-slate-400 mt-0.5">Coach Marcus uploaded a 12-minute video breakdown of your pick-and-roll reads.</p>
+              <span class="text-[10px] text-slate-400 font-mono mt-1 block">2 days ago</span>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           MODULE 11: SETTINGS
+           Notifications, security, preference toggles
+           ==================================================================== -->
+      <section id="settings" class="dashboard-section hidden space-y-6">
+        
+        <div class="max-w-2xl p-8 rounded-3xl bg-surface border border-theme shadow-2xl">
+          <h3 class="text-xl font-display font-black uppercase text-white mb-6">Athlete Preferences & Security</h3>
+
+          <form id="dashboardSettingsForm" class="space-y-6">
+            
+            <div class="space-y-4">
+              <h4 class="text-xs font-bold uppercase text-orange-400 font-mono">Notification Channels</h4>
+              
+              <label class="flex items-center justify-between p-3 rounded-xl bg-black/40 border border-theme cursor-pointer">
+                <span class="text-xs font-semibold text-white">SMS Workout Reminders (1h prior)</span>
+                <input type="checkbox" checked class="w-4 h-4 rounded text-orange-500 bg-slate-900 border-theme">
+              </label>
+
+              <label class="flex items-center justify-between p-3 rounded-xl bg-black/40 border border-theme cursor-pointer">
+                <span class="text-xs font-semibold text-white">Coach Feedback & Film Review Alerts</span>
+                <input type="checkbox" checked class="w-4 h-4 rounded text-orange-500 bg-slate-900 border-theme">
+              </label>
+
+              <label class="flex items-center justify-between p-3 rounded-xl bg-black/40 border border-theme cursor-pointer">
+                <span class="text-xs font-semibold text-white">Tournament & Scouting Combine Updates</span>
+                <input type="checkbox" checked class="w-4 h-4 rounded text-orange-500 bg-slate-900 border-theme">
+              </label>
+            </div>
+
+            <div class="space-y-4 pt-4 border-t border-theme/60">
+              <h4 class="text-xs font-bold uppercase text-orange-400 font-mono">Security & Password</h4>
+              
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Current Password</label>
+                <input type="password" value="••••••••" class="w-full px-4 py-2.5 rounded-xl bg-black/40 border border-theme text-sm text-white">
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-300 mb-1">New Password</label>
+                <input type="password" placeholder="Enter new password" class="w-full px-4 py-2.5 rounded-xl bg-black/40 border border-theme text-sm text-white">
+              </div>
+            </div>
+
+            <button type="submit" class="btn-court-primary px-6 py-3 rounded-xl text-xs uppercase font-bold tracking-wider">
+              Save Preferences
+            </button>
+
+          </form>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

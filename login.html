@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player Login — COURTLY Basketball Academy</title>
+  <meta name="description" content="Access your Courtly Basketball Academy Player Dashboard. Track skill progression, manage session bookings, and view combine telemetry.">
+
+    <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            orange: {
+              400: '#F3C04A',
+              500: '#D4AF37',
+              600: '#C59427',
+            },
+            court: {
+              charcoal: '#12161C',
+              dark: '#0A0D12',
+              surface: '#151B24',
+              border: '#252F3D',
+              gold: '#D4AF37',
+              goldHover: '#C59427',
+              goldLight: '#F3C04A',
+              cream: '#FDFBF7',
+              grey: '#8E959E',
+              lightBg: '#F8F9FA',
+              lightSurface: '#FFFFFF',
+              lightBorder: '#E2E6EA',
+            }
+          },
+          fontFamily: {
+            display: ['"Barlow Condensed"', 'sans-serif'],
+            heading: ['"Space Grotesk"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dark bg-[#0A0D12] text-slate-100 font-body antialiased flex flex-col justify-between min-h-screen selection:bg-[#D4AF37] selection:text-black">
+
+  <!-- Top Minimal Utility Bar (Theme toggle, RTL toggle) -->
+  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-end z-10">
+    <div class="flex items-center gap-2.5">
+      <!-- Theme Toggle -->
+      <button class="theme-toggle-btn w-9 h-9 rounded-lg bg-surface border border-theme flex items-center justify-center text-slate-300 hover:text-orange-400 hover:border-orange-500/50 transition-all" aria-label="Toggle theme">
+        <span class="theme-icon"><i data-lucide="sun" class="w-4 h-4"></i></span>
+      </button>
+
+      <!-- RTL Toggle with Bidirectional Arrows Icon -->
+      <button class="rtl-toggle-btn w-9 h-9 rounded-lg bg-surface border border-theme flex items-center justify-center text-slate-300 hover:text-orange-400 hover:border-orange-500/50 transition-all" aria-label="Toggle layout direction" title="Toggle RTL/LTR Direction">
+        <span class="rtl-toggle-icon flex items-center justify-center">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m16 3 4 4-4 4"/>
+            <path d="M20 7H4"/>
+            <path d="m8 21-4-4 4-4"/>
+            <path d="M4 17h16"/>
+          </svg>
+        </span>
+        <span class="sr-only rtl-toggle-text">RTL</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Centered Login Card Container (No Background Image, No Scrolling) -->
+  <main class="flex-1 flex items-center justify-center p-4">
+    <div class="w-full max-w-md p-8 sm:p-10 rounded-3xl bg-[#151B24] border border-theme shadow-2xl">
+      
+      <!-- Logo and Brand Name Centered Inside the Card -->
+      <div class="flex flex-col items-center text-center mb-8">
+        <a href="index.html" class="inline-flex items-center gap-3 group mb-4">
+          <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-tr from-[#C59427] to-[#F3C04A] flex items-center justify-center shadow-lg shadow-amber-500/25 group-hover:scale-105 transition-transform flex-shrink-0">
+            <!-- Geometric Basketball Icon -->
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M4.93 4.93l4.24 4.24"></path>
+              <path d="M14.83 9.17l4.24-4.24"></path>
+              <path d="M14.83 14.83l4.24 4.24"></path>
+              <path d="M9.17 14.83L4.93 19.07"></path>
+              <circle cx="12" cy="12" r="4"></circle>
+            </svg>
+          </div>
+          <div class="flex flex-col text-left rtl:text-right">
+            <span class="font-display font-black text-xl sm:text-2xl tracking-wider leading-none text-white dark:text-white group-hover:text-orange-500 transition-colors">COURTLY</span>
+            <span class="text-[9px] sm:text-[10px] uppercase font-bold tracking-[0.25em] text-orange-400">Basketball Academy</span>
+          </div>
+        </a>
+        <h2 class="text-xl font-bold font-display uppercase tracking-wider text-white mt-1">Athlete Sign In</h2>
+        <p class="text-xs text-slate-400 mt-1">Enter your athlete credentials to manage your training schedule.</p>
+      </div>
+
+      <!-- Login Form -->
+      <form id="courtlyLoginForm" class="space-y-4">
+        
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Email Address</label>
+          <div class="relative">
+            <input type="email" id="loginEmail" required value="marcus.vance@courtly.com" placeholder="athlete@domain.com" class="w-full px-4 py-3 rounded-xl bg-black/40 border border-theme text-sm text-white focus:outline-none focus:border-orange-500 transition-colors pl-10">
+            <i data-lucide="mail" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Password</label>
+          <div class="relative">
+            <input type="password" id="loginPassword" required value="Courtly2026!" placeholder="••••••••" class="w-full px-4 py-3 rounded-xl bg-black/40 border border-theme text-sm text-white focus:outline-none focus:border-orange-500 transition-colors pl-10 pr-10">
+            <i data-lucide="lock" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+            
+            <!-- Password Visibility Eye Icon -->
+            <button type="button" id="togglePasswordVisibility" class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white p-1" aria-label="Toggle password visibility">
+              <i data-lucide="eye" id="passwordEyeIcon" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Remember Me Checkbox & Forgot Password Link -->
+        <div class="flex items-center justify-between text-xs pt-1">
+          <label class="flex items-center gap-2 cursor-pointer text-slate-300">
+            <input type="checkbox" checked class="w-4 h-4 rounded bg-black/40 border-theme text-orange-500 focus:ring-0 focus:ring-offset-0">
+            <span>Remember Me</span>
+          </label>
+          <a href="#" onclick="showCourtlyToast('Password Reset', 'Password reset instructions sent to your email.', 'info')" class="text-orange-400 hover:text-orange-300 font-semibold">Forgot Password?</a>
+        </div>
+
+        <!-- Login Button -->
+        <button type="submit" id="loginSubmitBtn" class="w-full btn-court-primary py-3.5 rounded-xl text-xs uppercase font-bold tracking-widest mt-2">
+          <span>Sign In to Dashboard</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 ltr-only-icon"></i>
+        </button>
+
+      </form>
+
+      <!-- Social Logins (Icon-Only without text, original hover effects) -->
+      <div class="mt-8 pt-6 border-t border-theme/60 text-center">
+        <span class="text-xs text-slate-400 block mb-4">Or continue with</span>
+        
+        <div class="flex items-center justify-center gap-4">
+          <!-- Google Icon Only -->
+          <button type="button" class="social-icon-btn social-google bg-black/40 border border-theme text-slate-300" aria-label="Sign in with Google" onclick="demoSocialLogin('Google')">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"/></svg>
+          </button>
+
+          <!-- Facebook Icon Only -->
+          <button type="button" class="social-icon-btn social-facebook bg-black/40 border border-theme text-slate-300" aria-label="Sign in with Facebook" onclick="demoSocialLogin('Facebook')">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.595 0 9 1.583 9 4.615V8z"/></svg>
+          </button>
+
+          <!-- Apple Icon Only -->
+          <button type="button" class="social-icon-btn social-apple bg-black/40 border border-theme text-slate-300" aria-label="Sign in with Apple" onclick="demoSocialLogin('Apple')">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.93-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.07 1.72-.94 2.74 1 .08 2.02-.49 2.64-1.24z"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Link to Signup Page -->
+      <div class="mt-6 text-center text-xs text-slate-400">
+        Don't have an athlete account?
+        <a href="signup.html" class="text-orange-400 hover:text-orange-300 font-bold ml-1">Create Account</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Bottom Minimal Footer -->
+  <footer class="py-4 text-center text-xs text-slate-400">
+    © 2026 COURTLY Basketball Academy. Secure Athlete Portal.
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script>
+    lucide.createIcons();
+
+    // Password Eye Toggle
+    const toggleBtn = document.getElementById('togglePasswordVisibility');
+    const pwdInput = document.getElementById('loginPassword');
+    const eyeIcon = document.getElementById('passwordEyeIcon');
+
+    if (toggleBtn && pwdInput) {
+      toggleBtn.addEventListener('click', () => {
+        const isPassword = pwdInput.type === 'password';
+        pwdInput.type = isPassword ? 'text' : 'password';
+        toggleBtn.innerHTML = isPassword 
+          ? `<i data-lucide="eye-off" class="w-4 h-4"></i>`
+          : `<i data-lucide="eye" class="w-4 h-4"></i>`;
+        lucide.createIcons();
+      });
+    }
+
+    // Login Form Submit Demo
+    const loginForm = document.getElementById('courtlyLoginForm');
+    if (loginForm) {
+      loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('loginEmail').value;
+        const btn = document.getElementById('loginSubmitBtn');
+        btn.disabled = true;
+        btn.innerHTML = `<span class="animate-spin inline-block mr-2">⟳</span> Authenticating...`;
+
+        setTimeout(() => {
+          showCourtlyToast('Welcome Back!', `Signed in as ${email}`, 'success');
+          setTimeout(() => {
+            window.location.href = 'dashboard.html';
+          }, 800);
+        }, 700);
+      });
+    }
+
+    function demoSocialLogin(provider) {
+      showCourtlyToast(`${provider} Login`, `Authenticating with ${provider} secure token...`, 'info');
+      setTimeout(() => {
+        window.location.href = 'dashboard.html';
+      }, 900);
+    }
+  </script>
+</body>
+</html>

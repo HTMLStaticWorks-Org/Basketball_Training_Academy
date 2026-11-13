@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — COURTLY Basketball Training Academy | Heritage & Vision</title>
+  <meta name="description"
+    content="Discover the origins, philosophy, and championship vision of COURTLY Basketball Academy. Developing elite athletes through sports science and high-intensity coaching.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            orange: {
+              400: '#F3C04A',
+              500: '#D4AF37',
+              600: '#C59427',
+            },
+            court: {
+              charcoal: '#12161C',
+              dark: '#0A0D12',
+              surface: '#151B24',
+              border: '#252F3D',
+              gold: '#D4AF37',
+              goldHover: '#C59427',
+              goldLight: '#F3C04A',
+              cream: '#FDFBF7',
+              grey: '#8E959E',
+              lightBg: '#F8F9FA',
+              lightSurface: '#FFFFFF',
+              lightBorder: '#E2E6EA',
+            }
+          },
+          fontFamily: {
+            display: ['"Barlow Condensed"', 'sans-serif'],
+            heading: ['"Space Grotesk"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dark bg-[#0A0D12] text-slate-100 font-body antialiased selection:bg-[#D4AF37] selection:text-black">
+
+  <!-- ==========================================================================
+       STICKY HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 header-glass py-3.5 transition-all duration-300">
+    <div class="max-w-[1480px] w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group flex-shrink-0">
+        <div
+          class="w-10 h-10 2xl:w-11 2xl:h-11 rounded-xl bg-gradient-to-tr from-[#C59427] to-[#F3C04A] flex items-center justify-center shadow-lg shadow-amber-500/25 group-hover:scale-105 transition-transform">
+          <!-- Geometric Basketball Icon -->
+          <svg class="w-5 h-5 2xl:w-6 2xl:h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M4.93 4.93l4.24 4.24"></path>
+            <path d="M14.83 9.17l4.24-4.24"></path>
+            <path d="M14.83 14.83l4.24 4.24"></path>
+            <path d="M9.17 14.83L4.93 19.07"></path>
+            <circle cx="12" cy="12" r="4"></circle>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span
+            class="font-display font-black text-xl 2xl:text-2xl tracking-wider leading-none text-white dark:text-white group-hover:text-orange-500 transition-colors">COURTLY</span>
+          <span class="text-[9px] 2xl:text-[10px] uppercase font-bold tracking-[0.25em] text-orange-400">Basketball
+            Academy</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden xl:flex items-center gap-2.5 2xl:gap-4 whitespace-nowrap">
+        <!-- Home Dropdown Menu -->
+        <div class="relative group/dropdown py-2 flex items-center flex-shrink-0">
+          <button type="button"
+            class="home-dropdown-btn nav-link flex items-center gap-1 text-xs 2xl:text-sm font-semibold whitespace-nowrap text-slate-300 hover:text-orange-400 group-hover/dropdown:text-orange-500 transition-colors"
+            aria-expanded="false" aria-haspopup="true">
+            <span>Home</span>
+            <svg
+              class="w-3.5 h-3.5 text-slate-400 group-hover/dropdown:text-orange-500 group-hover/dropdown:rotate-180 transition-transform duration-200"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+
+          <!-- Dropdown Menu Box -->
+          <div
+            class="absolute top-full left-0 pt-2 w-60 opacity-0 pointer-events-none group-hover/dropdown:opacity-100 group-hover/dropdown:pointer-events-auto transition-all duration-200 z-50 transform origin-top-left -translate-y-1 group-hover/dropdown:translate-y-0">
+            <div
+              class="courtly-dropdown-menu rounded-2xl bg-[#151B24] border border-[#252F3D] shadow-2xl p-2 space-y-1">
+
+              <!-- Home 1 -->
+              <a href="index.html"
+                class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-800/80 transition-all group/item">
+                <div
+                  class="w-7 h-7 rounded-lg bg-orange-500/15 border border-orange-500/30 text-orange-400 flex items-center justify-center flex-shrink-0 group-hover/item:bg-orange-500 group-hover/item:text-white transition-all">
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                  </svg>
+                </div>
+                <div>
+                  <div
+                    class="text-xs font-bold text-white group-hover/item:text-orange-400 transition-colors flex items-center gap-1.5">
+                    <span>Home 1</span>
+                    <span
+                      class="text-[9px] px-1.5 py-0.2 rounded bg-orange-500/20 text-orange-400 font-mono">Main</span>
+                  </div>
+                  <p class="text-[10px] text-slate-400 leading-tight mt-0.5">Classic academy showcase</p>
+                </div>
+              </a>
+
+              <!-- Home 2 -->
+              <a href="home-2.html"
+                class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-800/80 transition-all group/item">
+                <div
+                  class="w-7 h-7 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 flex items-center justify-center flex-shrink-0 group-hover/item:bg-orange-500 group-hover/item:text-white transition-all">
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="7" height="9" x="3" y="3" rx="1" />
+                    <rect width="7" height="5" x="14" y="3" rx="1" />
+                    <rect width="7" height="9" x="14" y="12" rx="1" />
+                    <rect width="7" height="5" x="3" y="16" rx="1" />
+                  </svg>
+                </div>
+                <div>
+                  <div
+                    class="text-xs font-bold text-white group-hover/item:text-orange-400 transition-colors flex items-center gap-1.5">
+                    <span>Home 2</span>
+                    <span class="text-[9px] px-1.5 py-0.2 rounded bg-slate-800 text-slate-300 font-mono">Kinetic</span>
+                  </div>
+                  <p class="text-[10px] text-slate-400 leading-tight mt-0.5">Split-screen editorial</p>
+                </div>
+              </a>
+
+            </div>
+          </div>
+        </div>
+        <a href="about.html"
+          class="nav-link text-xs 2xl:text-sm font-bold whitespace-nowrap text-orange-500 transition-colors hover:text-orange-400 flex-shrink-0">About</a>
+        <a href="programs.html"
+          class="nav-link text-xs 2xl:text-sm font-semibold whitespace-nowrap text-slate-300 hover:text-orange-400 transition-colors flex-shrink-0">Programs</a>
+        <a href="coaches.html"
+          class="nav-link text-xs 2xl:text-sm font-semibold whitespace-nowrap text-slate-300 hover:text-orange-400 transition-colors flex-shrink-0">Coaches</a>
+        <a href="facilities.html"
+          class="nav-link text-xs 2xl:text-sm font-semibold whitespace-nowrap text-slate-300 hover:text-orange-400 transition-colors flex-shrink-0">Facilities</a>
+        <a href="leagues.html"
+          class="nav-link text-xs 2xl:text-sm font-semibold whitespace-nowrap text-slate-300 hover:text-orange-400 transition-colors flex-shrink-0">Leagues
+          & Events</a>
+        <a href="gallery.html"
+          class="nav-link text-xs 2xl:text-sm font-semibold whitespace-nowrap text-slate-300 hover:text-orange-400 transition-colors flex-shrink-0">Gallery</a>
+        <a href="contact.html"
+          class="nav-link text-xs 2xl:text-sm font-semibold whitespace-nowrap text-slate-300 hover:text-orange-400 transition-colors flex-shrink-0">Contact</a>
+        <a href="dashboard.html"
+          class="nav-link text-xs 2xl:text-sm font-semibold whitespace-nowrap text-slate-300 hover:text-orange-400 transition-colors flex-shrink-0">Dashboard</a>
+      </nav>
+
+      <!-- Right Action Toolbar: Theme Toggle, RTL Toggle, Login, CTA -->
+      <div class="hidden xl:flex items-center gap-2 xl:gap-2.5 flex-shrink-0">
+        <!-- Theme Toggle -->
+        <button
+          class="theme-toggle-btn w-9 h-9 flex-shrink-0 rounded-lg bg-surface border border-theme flex items-center justify-center text-slate-300 hover:text-orange-400 hover:border-orange-500/50 transition-all"
+          aria-label="Toggle theme">
+          <span class="theme-icon">
+            <i data-lucide="sun" class="w-4 h-4"></i>
+          </span>
+        </button>
+
+        <!-- RTL Toggle with Bidirectional Arrows Icon -->
+        <button
+          class="rtl-toggle-btn w-9 h-9 flex-shrink-0 rounded-lg bg-surface border border-theme flex items-center justify-center text-slate-300 hover:text-orange-400 hover:border-orange-500/50 transition-all"
+          aria-label="Toggle layout direction" title="Toggle RTL/LTR Direction">
+          <span class="rtl-toggle-icon flex items-center justify-center">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="m16 3 4 4-4 4" />
+              <path d="M20 7H4" />
+              <path d="m8 21-4-4 4-4" />
+              <path d="M4 17h16" />
+            </svg>
+          </span>
+          <span class="sr-only rtl-toggle-text">RTL</span>
+        </button>
+
+        <!-- Login -->
+        <a href="login.html"
+          class="px-2.5 xl:px-3 py-2 flex-shrink-0 text-xs uppercase font-bold tracking-wider text-slate-300 hover:text-white transition-colors flex items-center gap-1.5 whitespace-nowrap">
+          <i data-lucide="user" class="w-4 h-4 text-orange-500"></i>
+          <span>Login</span>
+        </a>
+
+        <!-- Join Academy CTA -->
+        <a href="signup.html"
+          class="btn-court-primary px-4 xl:px-5 py-2.5 flex-shrink-0 rounded-xl text-xs uppercase tracking-wider font-bold whitespace-nowrap">
+          <span>Join Academy</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 ltr-only-icon"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuToggle"
+        class="xl:hidden w-10 h-10 rounded-lg bg-surface border border-theme flex items-center justify-center text-slate-200 hover:text-orange-400"
+        aria-label="Open Navigation Menu">
+        <i data-lucide="menu" class="w-5 h-5"></i>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop & Drawer -->
+  <div id="mobileNavBackdrop" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden transition-opacity"></div>
+  <div id="mobileNavDrawer"
+    class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] z-50 bg-[#151B24] border-l border-[#252F3D] shadow-2xl p-6 flex flex-col justify-between translate-x-full transition-transform duration-300 overflow-y-auto">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-[#252F3D]">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-lg bg-orange-500 flex items-center justify-center text-white">
+            <i data-lucide="activity" class="w-5 h-5"></i>
+          </div>
+          <span class="font-display font-black text-xl text-white">COURTLY</span>
+        </div>
+        <button id="mobileMenuClose"
+          class="w-9 h-9 rounded-lg bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+            <div class="py-6 flex flex-col gap-3 font-medium">
+        <a href="index.html" class="text-slate-300 hover:text-orange-400 py-2 px-3 rounded-lg hover:bg-slate-800 transition-colors">Home 1</a>
+        <a href="home-2.html" class="text-slate-300 hover:text-orange-400 py-2 px-3 rounded-lg hover:bg-slate-800 transition-colors">Home 2</a>
+        <a href="about.html" class="text-orange-500 font-bold py-2 px-3 rounded-lg bg-orange-500/10">About</a>
+        <a href="programs.html" class="text-slate-300 hover:text-orange-400 py-2 px-3 rounded-lg hover:bg-slate-800 transition-colors">Programs</a>
+        <a href="coaches.html" class="text-slate-300 hover:text-orange-400 py-2 px-3 rounded-lg hover:bg-slate-800 transition-colors">Coaches</a>
+        <a href="facilities.html" class="text-slate-300 hover:text-orange-400 py-2 px-3 rounded-lg hover:bg-slate-800 transition-colors">Facilities</a>
+        <a href="leagues.html" class="text-slate-300 hover:text-orange-400 py-2 px-3 rounded-lg hover:bg-slate-800 transition-colors">Leagues & Events</a>
+        <a href="gallery.html" class="text-slate-300 hover:text-orange-400 py-2 px-3 rounded-lg hover:bg-slate-800 transition-colors">Gallery</a>
+        <a href="contact.html" class="text-slate-300 hover:text-orange-400 py-2 px-3 rounded-lg hover:bg-slate-800 transition-colors">Contact</a>
+        <a href="dashboard.html"
+          class="text-emerald-400 hover:text-emerald-300 py-2 px-3 rounded-lg bg-emerald-500/10 flex items-center gap-2 transition-colors">
+          <i data-lucide="layout-dashboard" class="w-4 h-4"></i> Dashboard
+        </a>
+      </div>
+    </div>
+
+        <!-- Action Toolbar inside Hamburger (Theme, RTL, Login, Join Academy) -->
+    <div class="pt-6 border-t border-[#252F3D] flex flex-col gap-3 flex-shrink-0">
+      <div class="flex items-center justify-between gap-2">
+        <div class="flex items-center gap-2">
+          <!-- Theme Toggle -->
+          <button
+            class="theme-toggle-btn w-10 h-10 flex-shrink-0 rounded-xl bg-surface border border-theme flex items-center justify-center text-slate-300 hover:text-orange-400 transition-all"
+            aria-label="Toggle theme">
+            <span class="theme-icon flex items-center justify-center">
+              <i data-lucide="sun" class="w-4 h-4"></i>
+            </span>
+          </button>
+
+          <!-- RTL Toggle -->
+          <button
+            class="rtl-toggle-btn w-10 h-10 flex-shrink-0 rounded-xl bg-surface border border-theme flex items-center justify-center text-slate-300 hover:text-orange-400 transition-all"
+            aria-label="Toggle layout direction" title="Toggle RTL/LTR Direction">
+            <span class="rtl-toggle-icon flex items-center justify-center">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="m16 3 4 4-4 4" />
+                <path d="M20 7H4" />
+                <path d="m8 21-4-4 4-4" />
+                <path d="M4 17h16" />
+              </svg>
+            </span>
+            <span class="sr-only rtl-toggle-text">RTL</span>
+          </button>
+        </div>
+
+        <!-- Login -->
+        <a href="login.html"
+          class="flex-1 py-2.5 px-3 rounded-xl border border-[#252F3D] text-center text-xs font-bold uppercase text-slate-300 hover:text-white flex items-center justify-center gap-1.5 bg-surface transition-colors">
+          <i data-lucide="user" class="w-4 h-4 text-orange-500"></i>
+          <span>Login</span>
+        </a>
+      </div>
+
+      <!-- Join Academy CTA -->
+      <a href="signup.html"
+        class="w-full btn-court-primary py-3 rounded-xl text-center text-xs font-bold uppercase flex items-center justify-center gap-2 tracking-wider">
+        <span>Join Academy</span>
+        <i data-lucide="arrow-right" class="w-4 h-4 ltr-only-icon"></i>
+      </a>
+    </div>
+  </div>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         ABOUT - SECTION 1: ACADEMY STORY
+         How the basketball academy started, founders' mission, narrative layout
+         ========================================================================== -->
+    <section class="pt-32 pb-24 relative overflow-hidden court-pattern">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+          <div class="lg:col-span-6">
+            <div
+              class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs uppercase font-mono tracking-widest mb-4">
+              <i data-lucide="history" class="w-3.5 h-3.5"></i>
+              Chapter 01 // The Origin Story
+            </div>
+            <h1
+              class="text-4xl sm:text-6xl font-display font-black uppercase text-white tracking-tight leading-[0.95] mb-6">
+              Born From a Obsession With <span class="text-orange-500">Pure Basketball Craft</span>
+            </h1>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+              COURTLY was founded in 2018 by Head Coach Marcus Hayes alongside a group of former collegiate standouts
+              and biomechanists who recognized an alarming flaw in modern youth athletics: players were playing hundreds
+              of chaotic tournament games every year without ever learning the foundational biomechanics of footwork,
+              shot consistency, and spatial decision-making.
+            </p>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-8">
+              What started inside a rented single-court gymnasium in downtown New York has grown into an internationally
+              respected basketball institution encompassing over 45,000 square feet of FIBA hardwood courts, automated
+              shooting labs, and dedicated sports science clinics.
+            </p>
+
+            <div class="flex items-center gap-8 py-4 border-y border-theme">
+              <div>
+                <span class="font-display font-black text-3xl text-orange-500">2018</span>
+                <span class="block text-xs uppercase text-slate-400 font-bold">Founded In NY</span>
+              </div>
+              <div class="h-8 w-px bg-theme"></div>
+              <div>
+                <span class="font-display font-black text-3xl text-white">45k+</span>
+                <span class="block text-xs uppercase text-slate-400 font-bold">Sq Ft Campus</span>
+              </div>
+              <div class="h-8 w-px bg-theme"></div>
+              <div>
+                <span class="font-display font-black text-3xl text-orange-500">1,400+</span>
+                <span class="block text-xs uppercase text-slate-400 font-bold">Graduates</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Asymmetric Visual Composition -->
+          <div class="lg:col-span-6 relative">
+            <div class="rounded-3xl overflow-hidden border border-theme shadow-2xl relative">
+              <img src="https://images.unsplash.com/photo-1515523110800-9415d13b84a8?auto=format&fit=crop&w=1000&q=80"
+                alt="Hardwood Court with Basketball" class="w-full h-[460px] object-cover">
+            </div>
+            <!-- Secondary overlapping photo -->
+            <div
+              class="absolute -bottom-8 -left-8 w-60 h-60 rounded-2xl overflow-hidden border-4 border-[#15191E] shadow-2xl hidden sm:block img-zoom-container">
+              <img
+                src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto:best,fl_lossy/Basketball_IQ_Masthead_T_3fc36452bb.jpg"
+                alt="Coaches Strategic Review" class="w-full h-full object-cover">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT - SECTION 2: MISSION, VISION & CORE VALUES
+         Structured value cards, leadership ethics, character pillars
+         ========================================================================== -->
+    <section class="py-24 relative bg-surface border-y border-theme">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-orange-500 mb-2">
+            <i data-lucide="compass" class="w-4 h-4"></i>
+            Chapter 02 // Foundational Creed
+          </div>
+          <h2 class="text-4xl sm:text-6xl font-display font-black uppercase text-white tracking-tight">
+            Mission, Vision & <span class="text-orange-500">Core Values</span>
+          </h2>
+          <p class="text-slate-400 text-sm mt-3">
+            Skill will take you to the court, but discipline, character, and mental fortitude keep you on it.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-12 grid-3-cards">
+
+          <!-- Mission -->
+          <div class="p-8 rounded-3xl bg-[#151B24] border border-theme card-hover-fx">
+            <div class="w-12 h-12 rounded-xl bg-orange-500/15 text-orange-500 flex items-center justify-center mb-6">
+              <i data-lucide="target" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-display font-black uppercase text-white mb-3">Our Mission</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              To empower every dedicated athlete with the technical mechanics, physical stamina, and spatial awareness
+              required to unlock collegiate scholarships and professional opportunities.
+            </p>
+          </div>
+
+          <!-- Vision -->
+          <div class="p-8 rounded-3xl bg-[#151B24] border border-theme card-hover-fx">
+            <div class="w-12 h-12 rounded-xl bg-orange-500/15 text-orange-500 flex items-center justify-center mb-6">
+              <i data-lucide="eye" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-display font-black uppercase text-white mb-3">Our Vision</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              To establish an undisputed global benchmark for player development where data analytics, sports science,
+              and old-school work ethic harmonize seamlessly.
+            </p>
+          </div>
+
+          <!-- Values Summary -->
+          <div class="p-8 rounded-3xl bg-[#151B24] border border-theme card-hover-fx card-center-tab">
+            <div class="w-12 h-12 rounded-xl bg-orange-500/15 text-orange-500 flex items-center justify-center mb-6">
+              <i data-lucide="shield" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-display font-black uppercase text-white mb-3">Core Pillars</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Unconditional effort, accountability under pressure, selfless court teamwork, and relentless curiosity for
+              mastering micro-details of the game.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- 4 Character Pillars Strip -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="p-4 rounded-2xl bg-black/40 border border-theme text-center">
+            <span class="text-orange-500 font-mono font-bold text-xs uppercase block mb-1">Pillar 01</span>
+            <h5 class="text-sm font-bold text-white leading-snug">Relentless Preparation</h5>
+          </div>
+          <div class="p-4 rounded-2xl bg-black/40 border border-theme text-center">
+            <span class="text-orange-500 font-mono font-bold text-xs uppercase block mb-1">Pillar 02</span>
+            <h5 class="text-sm font-bold text-white leading-snug">Integrity & Sportsmanship</h5>
+          </div>
+          <div class="p-4 rounded-2xl bg-black/40 border border-theme text-center">
+            <span class="text-orange-500 font-mono font-bold text-xs uppercase block mb-1">Pillar 03</span>
+            <h5 class="text-sm font-bold text-white leading-snug">Kinetic<br>Precision</h5>
+          </div>
+          <div class="p-4 rounded-2xl bg-black/40 border border-theme text-center">
+            <span class="text-orange-500 font-mono font-bold text-xs uppercase block mb-1">Pillar 04</span>
+            <h5 class="text-sm font-bold text-white leading-snug">Total Self-Discipline</h5>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT - SECTION 3: TRAINING PHILOSOPHY & DEVELOPMENT APPROACH
+         Biomechanical analysis, contested decision-making, speed & agility
+         ========================================================================== -->
+    <section class="py-24 relative court-grid-lines">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+          <div class="lg:col-span-6 relative">
+            <div class="rounded-3xl overflow-hidden border border-theme shadow-2xl">
+              <img
+                src="https://content.app-sources.com/s/29328288511129272/uploads/professional_photos/_DSC8383-min-4105047.jpg?format=webp"
+                alt="Athletic Agility Training Ladder Drills" class="w-full h-[460px] object-cover">
+            </div>
+            <div
+              class="absolute -bottom-6 -right-6 p-6 rounded-2xl bg-[#151B24] border border-orange-500/40 shadow-2xl max-w-xs hidden sm:block">
+              <span class="text-xs font-mono text-orange-400 font-bold uppercase block mb-1">The 3-Second Rule</span>
+              <p class="text-xs text-slate-300">"Every rep must translate to an instinctual read in an official
+                fourth-quarter playoff setting."</p>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6">
+            <div
+              class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-orange-500 mb-2">
+              <i data-lucide="cpu" class="w-4 h-4"></i>
+              Chapter 03 // The Scientific Method
+            </div>
+            <h2
+              class="text-4xl sm:text-5xl font-display font-black uppercase text-white tracking-tight leading-tight mb-6">
+              Training Philosophy & <br>
+              <span class="text-orange-500">Development Approach</span>
+            </h2>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              We reject high-volume, unfocused repetitions that reinforce improper mechanics. Instead, Courtly's
+              approach dissects every move into micro-phases: the balance base, explosive first-step angle, release arc,
+              and landing stability.
+            </p>
+
+            <div class="space-y-4">
+              <div class="p-4 rounded-2xl bg-surface border border-theme flex items-start gap-4">
+                <div
+                  class="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="font-bold font-mono text-xs">01</span>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white mb-1">Game-Speed Simulation</h4>
+                  <p class="text-xs text-slate-400 leading-relaxed">No static drills. Every ball-screen read, pull-up
+                    jumper, and defensive rotation is conducted against real resistance and live timers.</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-surface border border-theme flex items-start gap-4">
+                <div
+                  class="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="font-bold font-mono text-xs">02</span>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white mb-1">Deceleration & Joint Longevity</h4>
+                  <p class="text-xs text-slate-400 leading-relaxed">80% of basketball injuries occur during landing and
+                    deceleration. We teach athletes how to stop on a dime with zero knee strain.</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-surface border border-theme flex items-start gap-4">
+                <div
+                  class="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="font-bold font-mono text-xs">03</span>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white mb-1">Mental Toughness & Film IQ</h4>
+                  <p class="text-xs text-slate-400 leading-relaxed">Weekly film breakdowns teach players to see the game
+                    one second ahead of the defense, anticipating passes and traps before they happen.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT - SECTION 4: ACADEMY ACHIEVEMENTS & MILESTONES
+         Chronological evolution, awards, championships, NCAA alumni
+         ========================================================================== -->
+    <section class="py-24 relative bg-surface border-y border-theme">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-orange-500 mb-2">
+            <i data-lucide="award" class="w-4 h-4"></i>
+            Chapter 04 // Proven Track Record
+          </div>
+          <h2 class="text-4xl sm:text-6xl font-display font-black uppercase text-white tracking-tight">
+            Academy Achievements & <span class="text-orange-500">Milestones</span>
+          </h2>
+          <p class="text-slate-400 text-sm mt-3">
+            Six years of relentless dedication celebrated through championship banners and collegiate scholarship
+            awards.
+          </p>
+        </div>
+
+        <div class="relative border-l-2 border-orange-500/40 ml-4 sm:ml-32 space-y-12">
+
+          <!-- Milestone 1 -->
+          <div class="relative pl-8 sm:pl-12">
+            <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-orange-500 border-4 border-[#15191E]">
+            </div>
+            <span class="text-xs font-mono text-orange-400 font-bold uppercase">2018 // Foundation</span>
+            <h3 class="text-2xl font-display font-black uppercase text-white mt-1 mb-2">The Inception of Courtly</h3>
+            <p class="text-xs sm:text-sm text-slate-400 max-w-2xl leading-relaxed">
+              Launched with 3 coaches and 24 inaugural student-athletes. Developed the original "Kinetic Release"
+              shooting protocol.
+            </p>
+          </div>
+
+          <!-- Milestone 2 -->
+          <div class="relative pl-8 sm:pl-12">
+            <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-orange-500 border-4 border-[#15191E]">
+            </div>
+            <span class="text-xs font-mono text-orange-400 font-bold uppercase">2020 // Facility Expansion</span>
+            <h3 class="text-2xl font-display font-black uppercase text-white mt-1 mb-2">Grand Opening of Main Sports
+              Campus</h3>
+            <p class="text-xs sm:text-sm text-slate-400 max-w-2xl leading-relaxed">
+              Unveiled our premier 45,000 sq ft facility featuring 4 FIBA regulation hardwood courts and automated
+              shooting tracking labs.
+            </p>
+          </div>
+
+          <!-- Milestone 3 -->
+          <div class="relative pl-8 sm:pl-12">
+            <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-orange-500 border-4 border-[#15191E]">
+            </div>
+            <span class="text-xs font-mono text-orange-400 font-bold uppercase">2023 // AAU Championship</span>
+            <h3 class="text-2xl font-display font-black uppercase text-white mt-1 mb-2">National AAU Showcase Champions
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-400 max-w-2xl leading-relaxed">
+              Courtly Under-18 squad captured the National Gold Bracket title undefeated, earning our program nationwide
+              media coverage.
+            </p>
+          </div>
+
+          <!-- Milestone 4 -->
+          <div class="relative pl-8 sm:pl-12">
+            <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-orange-500 border-4 border-[#15191E]">
+            </div>
+            <span class="text-xs font-mono text-orange-400 font-bold uppercase">2026 // Modern Era</span>
+            <h3 class="text-2xl font-display font-black uppercase text-white mt-1 mb-2">Digital Player Portal & $24M in
+              Scholarships</h3>
+            <p class="text-xs sm:text-sm text-slate-400 max-w-2xl leading-relaxed">
+              Over 96% of our varsity graduates commit to college basketball rosters, surpassing $24 million in
+              cumulative scholarship commitments.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT - SECTION 5: MEET THE COMMUNITY & FINAL CTA
+         Academy family, coaching brotherhood, trial enrollment call to action
+         ========================================================================== -->
+    <section class="py-24 relative overflow-hidden court-pattern">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div
+          class="p-8 sm:p-14 rounded-3xl bg-gradient-to-br from-[#1C222B] to-[#11151A] border-2 border-orange-500/40 shadow-2xl relative">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+
+            <div class="lg:col-span-7">
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/20 text-orange-400 text-xs font-mono font-bold uppercase mb-4 border border-orange-500/30">
+                <i data-lucide="users" class="w-3.5 h-3.5"></i>
+                Chapter 05 // The Courtly Family
+              </div>
+              <h2 class="text-3xl sm:text-5xl font-display font-black uppercase text-white tracking-tight mb-4">
+                Join a Brotherhood of <span class="text-orange-500">Championship Athletes</span>
+              </h2>
+              <p class="text-slate-300 text-sm leading-relaxed mb-8 max-w-xl">
+                When you step onto our hardwood, you join hundreds of teammates, alumni, and certified mentors who hold
+                you to the highest standard of athletic excellence every single day.
+              </p>
+
+              <div class="flex flex-wrap items-center gap-4">
+                <a href="signup.html"
+                  class="btn-court-primary px-8 py-4 rounded-xl text-xs uppercase font-bold tracking-wider">
+                  Book Initial Assessment
+                </a>
+                <a href="contact.html"
+                  class="btn-court-secondary px-8 py-4 rounded-xl text-xs uppercase font-bold tracking-wider">
+                  Contact Coaching Staff
+                </a>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 relative">
+              <div class="rounded-2xl overflow-hidden border border-theme shadow-xl img-zoom-container">
+                <img src="https://www.brotherhoodelite.ca/_next/image?url=%2Fheros-temp.jpg&w=3840&q=75"
+                  alt="Team Huddle and High Five Celebration" class="w-full h-72 object-cover">
+              </div>
+              <div
+                class="absolute -bottom-4 -left-4 bg-orange-500 text-white font-mono text-xs font-bold px-4 py-2 rounded-xl shadow-lg">
+                ONE TEAM • ONE GOAL
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       CONSISTENT PREMIUM FOOTER
+       ========================================================================== -->
+  <footer class="bg-[#0D1015] border-t border-[#252F3D] text-slate-400 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#252F3D]">
+
+        <!-- Brand Info -->
+        <div class="lg:col-span-2">
+          <a href="index.html" class="flex items-center gap-3 mb-4 group">
+            <div
+              class="w-10 h-10 rounded-xl bg-orange-500 flex items-center justify-center text-white shadow-lg shadow-amber-500/30">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M4.93 4.93l4.24 4.24"></path>
+                <path d="M14.83 9.17l4.24-4.24"></path>
+                <path d="M14.83 14.83l4.24 4.24"></path>
+                <path d="M9.17 14.83L4.93 19.07"></path>
+                <circle cx="12" cy="12" r="4"></circle>
+              </svg>
+            </div>
+            <div>
+              <span class="font-display font-black text-2xl tracking-wider text-white">COURTLY</span>
+              <span class="block text-[9px] uppercase font-bold tracking-[0.25em] text-orange-400">Basketball
+                Academy</span>
+            </div>
+          </a>
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm mb-6">
+            The elite proving ground for passionate basketball players. Precision skills coaching, Olympic strength
+            conditioning, and competitive tournament pathways in world-class facilities.
+          </p>
+
+          <!-- Social Media Icons with Individual Original Hover Effects -->
+          <div class="flex items-center gap-2.5">
+            <a href="#" class="social-icon-btn social-google bg-[#191E25] border border-[#252F3D] text-slate-300"
+              aria-label="Google">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon-btn social-facebook bg-[#191E25] border border-[#252F3D] text-slate-300"
+              aria-label="Facebook">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.595 0 9 1.583 9 4.615V8z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon-btn social-apple bg-[#191E25] border border-[#252F3D] text-slate-300"
+              aria-label="Apple">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.93-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.07 1.72-.94 2.74 1 .08 2.02-.49 2.64-1.24z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon-btn social-twitter bg-[#191E25] border border-[#252F3D] text-slate-300"
+              aria-label="Twitter">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon-btn social-instagram bg-[#191E25] border border-[#252F3D] text-slate-300"
+              aria-label="Instagram">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon-btn social-youtube bg-[#191E25] border border-[#252F3D] text-slate-300"
+              aria-label="YouTube">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon-btn social-linkedin bg-[#191E25] border border-[#252F3D] text-slate-300"
+              aria-label="LinkedIn">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-white font-display font-bold uppercase tracking-wider text-base mb-4">Quick Links</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="about.html" class="hover:text-orange-400 transition-colors">About Academy</a></li>
+            <li><a href="programs.html" class="hover:text-orange-400 transition-colors">Training Programs</a></li>
+            <li><a href="coaches.html" class="hover:text-orange-400 transition-colors">Coaching Roster</a></li>
+            <li><a href="facilities.html" class="hover:text-orange-400 transition-colors">Court Facilities</a></li>
+            <li><a href="leagues.html" class="hover:text-orange-400 transition-colors">Leagues & Events</a></li>
+            <li><a href="gallery.html" class="hover:text-orange-400 transition-colors">Photo & Video Gallery</a></li>
+          </ul>
+        </div>
+
+        <!-- Training Programs -->
+        <div>
+          <h4 class="text-white font-display font-bold uppercase tracking-wider text-base mb-4">Programs</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="programs.html#youth" class="hover:text-orange-400 transition-colors">Youth Basketball (Ages
+                7-12)</a></li>
+            <li><a href="programs.html#beginner" class="hover:text-orange-400 transition-colors">Beginner &
+                Intermediate</a></li>
+            <li><a href="programs.html#advanced" class="hover:text-orange-400 transition-colors">Advanced Player
+                Development</a></li>
+            <li><a href="programs.html#shooting" class="hover:text-orange-400 transition-colors">Shooting & Scoring
+                Mastery</a></li>
+            <li><a href="programs.html#defense" class="hover:text-orange-400 transition-colors">Defensive Lockdown
+                Camp</a></li>
+            <li><a href="programs.html#speed" class="hover:text-orange-400 transition-colors">Speed, Agility &
+                Footwork</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Information -->
+        <div>
+          <h4 class="text-white font-display font-bold uppercase tracking-wider text-base mb-4">Contact Info</h4>
+          <div class="space-y-3 text-xs">
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="map-pin" class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0"></i>
+              <span>742 Hardwood Boulevard, Sports District, NY 10001</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <i data-lucide="phone" class="w-4 h-4 text-orange-500 flex-shrink-0"></i>
+              <span>+1 (800) 555-COURT</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <i data-lucide="mail" class="w-4 h-4 text-orange-500 flex-shrink-0"></i>
+              <span>elite@courtlyacademy.com</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="clock" class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0"></i>
+              <span>Mon - Fri: 6:00 AM - 10:00 PM<br>Sat - Sun: 7:00 AM - 9:00 PM</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+        <div>
+          © 2026 COURTLY Basketball Academy. All Rights Reserved. Engineered for Athletic Greatness.
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-white transition-colors">Player Code of Conduct</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>

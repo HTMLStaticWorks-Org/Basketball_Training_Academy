@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COURTLY (Home 2) — Modern Editorial Basketball Academy</title>
+  <meta name="description"
+    content="Alternative high-impact editorial basketball academy experience. Kinetic development, biomechanics, and championship basketball coaching.">
+
+    <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            orange: {
+              400: '#F3C04A',
+              500: '#D4AF37',
+              600: '#C59427',
+            },
+            court: {
+              charcoal: '#12161C',
+              dark: '#0A0D12',
+              surface: '#151B24',
+              border: '#252F3D',
+              gold: '#D4AF37',
+              goldHover: '#C59427',
+              goldLight: '#F3C04A',
+              cream: '#FDFBF7',
+              grey: '#8E959E',
+              lightBg: '#F8F9FA',
+              lightSurface: '#FFFFFF',
+              lightBorder: '#E2E6EA',
+            }
+          },
+          fontFamily: {
+            display: ['"Barlow Condensed"', 'sans-serif'],
+            heading: ['"Space Grotesk"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dark bg-[#0A0D12] text-slate-100 font-body antialiased selection:bg-[#D4AF37] selection:text-black">
+
+  <!-- ==========================================================================
+       STICKY HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 header-glass py-3.5 transition-all duration-300">
+    <div class="max-w-[1480px] w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group flex-shrink-0">
+        <div
+          class="w-10 h-10 2xl:w-11 2xl:h-11 rounded-xl bg-gradient-to-tr from-[#C59427] to-[#F3C04A] flex items-center justify-center shadow-lg shadow-amber-500/25 group-hover:scale-105 transition-transform">
+          <!-- Geometric Basketball Icon -->
+          <svg class="w-5 h-5 2xl:w-6 2xl:h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M4.93 4.93l4.24 4.24"></path>
+            <path d="M14.83 9.17l4.24-4.24"></path>
+            <path d="M14.83 14.83l4.24 4.24"></path>
+            <path d="M9.17 14.83L4.93 19.07"></path>
+            <circle cx="12" cy="12" r="4"></circle>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span
+            class="font-display font-black text-xl 2xl:text-2xl tracking-wider leading-none text-white dark:text-white group-hover:text-orange-500 transition-colors">COURTLY</span>
+          <span class="text-[9px] 2xl:text-[10px] uppercase font-bold tracking-[0.25em] text-orange-400">Basketball
+            Academy</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden xl:flex items-center gap-2.5 2xl:gap-4 whitespace-nowrap">
+        <!-- Home Dropdown Menu -->
+        <div class="relative group/dropdown py-2 flex items-center flex-shrink-0">
+          <button type="button"
+            class="home-dropdown-btn nav-link flex items-center gap-1 text-xs 2xl:text-sm font-semibold whitespace-nowrap text-slate-300 hover:text-orange-400 group-hover/dropdown:text-orange-500 transition-colors"
+            aria-expanded="false" aria-haspopup="true">
+            <span>Home</span>
+            <svg
+              class="w-3.5 h-3.5 text-slate-400 group-hover/dropdown:text-orange-500 group-hover/dropdown:rotate-180 transition-transform duration-200"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+
+          <!-- Dropdown Menu Box -->
+          <div
+            class="absolute top-full left-0 pt-2 w-60 opacity-0 pointer-events-none group-hover/dropdown:opacity-100 group-hover/dropdown:pointer-events-auto transition-all duration-200 z-50 transform origin-top-left -translate-y-1 group-hover/dropdown:translate-y-0">
+            <div
+              class="courtly-dropdown-menu rounded-2xl bg-[#151B24] border border-[#252F3D] shadow-2xl p-2 space-y-1">
+
+              <!-- Home 1 -->
+              <a href="index.html"
+                class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-800/80 transition-all group/item">
+                <div
+                  class="w-7 h-7 rounded-lg bg-orange-500/15 border border-orange-500/30 text-orange-400 flex items-center justify-center flex-shrink-0 group-hover/item:bg-orange-500 group-hover/item:text-white transition-all">
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                  </svg>
+                </div>
+                <div>
+                  <div
+                    class="text-xs font-bold text-white group-hover/item:text-orange-400 transition-colors flex items-center gap-1.5">
+                    <span>Home 1</span>
+                    <span
+                      class="text-[9px] px-1.5 py-0.2 rounded bg-orange-500/20 text-orange-400 font-mono">Main</span>
+                  </div>
+                  <p class="text-[10px] text-slate-400 leading-tight mt-0.5">Classic academy showcase</p>
+                </div>
+              </a>
+
+              <!-- Home 2 -->
+              <a href="home-2.html"
+                class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-800/80 transition-all group/item">
+                <div
+                  class="w-7 h-7 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 flex items-center justify-center flex-shrink-0 group-hover/item:bg-orange-500 group-hover/item:text-white transition-all">
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="7" height="9" x="3" y="3" rx="1" />
+                    <rect width="7" height="5" x="14" y="3" rx="1" />
+                    <rect width="7" height="9" x="14" y="12" rx="1" />
+                    <rect width="7" height="5" x="3" y="16" rx="1" />
+                  </svg>
+                </div>
+                <div>
+                  <div
+                    class="text-xs font-bold text-white group-hover/item:text-orange-400 transition-colors flex items-center gap-1.5">
+                    <span>Home 2</span>
+                    <span class="text-[9px] px-1.5 py-0.2 rounded bg-slate-800 text-slate-300 font-mono">Kinetic</span>
+                  </div>
+                  <p class="text-[10px] text-slate-400 leading-tight mt-0.5">Split-screen editorial</p>
+                </div>
+              </a>
+
+            </div>
+          </div>
+        </div>
+        <a href="about.html"
+          class="nav-link text-xs 2xl:text-sm font-semibold whitespace-nowrap text-slate-300 hover:text-orange-400 transition-colors flex-shrink-0">About</a>
+        <a href="programs.html"
+          class="nav-link text-xs 2xl:text-sm font-semibold whitespace-nowrap text-slate-300 hover:text-orange-400 transition-colors flex-shrink-0">Programs</a>
+        <a href="coaches.html"
+          class="nav-link text-xs 2xl:text-sm font-semibold whitespace-nowrap text-slate-300 hover:text-orange-400 transition-colors flex-shrink-0">Coaches</a>
+        <a href="facilities.html"
+          class="nav-link text-xs 2xl:text-sm font-semibold whitespace-nowrap text-slate-300 hover:text-orange-400 transition-colors flex-shrink-0">Facilities</a>
+        <a href="leagues.html"
+          class="nav-link text-xs 2xl:text-sm font-semibold whitespace-nowrap text-slate-300 hover:text-orange-400 transition-colors flex-shrink-0">Leagues
+          & Events</a>
+        <a href="gallery.html"
+          class="nav-link text-xs 2xl:text-sm font-semibold whitespace-nowrap text-slate-300 hover:text-orange-400 transition-colors flex-shrink-0">Gallery</a>
+        <a href="contact.html"
+          class="nav-link text-xs 2xl:text-sm font-semibold whitespace-nowrap text-slate-300 hover:text-orange-400 transition-colors flex-shrink-0">Contact</a>
+        <a href="dashboard.html"
+          class="nav-link text-xs 2xl:text-sm font-semibold whitespace-nowrap text-slate-300 hover:text-orange-400 transition-colors flex-shrink-0">Dashboard</a>
+      </nav>
+
+      <!-- Right Action Toolbar: Theme Toggle, RTL Toggle, Login, CTA -->
+      <div class="hidden xl:flex items-center gap-2 xl:gap-2.5 flex-shrink-0">
+        <!-- Theme Toggle -->
+        <button
+          class="theme-toggle-btn w-9 h-9 flex-shrink-0 rounded-lg bg-surface border border-theme flex items-center justify-center text-slate-300 hover:text-orange-400 hover:border-orange-500/50 transition-all"
+          aria-label="Toggle theme">
+          <span class="theme-icon">
+            <i data-lucide="sun" class="w-4 h-4"></i>
+          </span>
+        </button>
+
+        <!-- RTL Toggle with Bidirectional Arrows Icon -->
+        <button
+          class="rtl-toggle-btn w-9 h-9 flex-shrink-0 rounded-lg bg-surface border border-theme flex items-center justify-center text-slate-300 hover:text-orange-400 hover:border-orange-500/50 transition-all"
+          aria-label="Toggle layout direction" title="Toggle RTL/LTR Direction">
+          <span class="rtl-toggle-icon flex items-center justify-center">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="m16 3 4 4-4 4" />
+              <path d="M20 7H4" />
+              <path d="m8 21-4-4 4-4" />
+              <path d="M4 17h16" />
+            </svg>
+          </span>
+          <span class="sr-only rtl-toggle-text">RTL</span>
+        </button>
+
+        <!-- Login -->
+        <a href="login.html"
+          class="px-2.5 xl:px-3 py-2 flex-shrink-0 text-xs uppercase font-bold tracking-wider text-slate-300 hover:text-white transition-colors flex items-center gap-1.5 whitespace-nowrap">
+          <i data-lucide="user" class="w-4 h-4 text-orange-500"></i>
+          <span>Login</span>
+        </a>
+
+        <!-- Join Academy CTA -->
+        <a href="signup.html"
+          class="btn-court-primary px-4 xl:px-5 py-2.5 flex-shrink-0 rounded-xl text-xs uppercase tracking-wider font-bold whitespace-nowrap">
+          <span>Join Academy</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 ltr-only-icon"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuToggle"
+        class="xl:hidden w-10 h-10 rounded-lg bg-surface border border-theme flex items-center justify-center text-slate-200 hover:text-orange-400"
+        aria-label="Open Navigation Menu">
+        <i data-lucide="menu" class="w-5 h-5"></i>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop & Drawer -->
+  <div id="mobileNavBackdrop" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden transition-opacity"></div>
+  <div id="mobileNavDrawer"
+    class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] z-50 bg-[#151B24] border-l border-[#252F3D] shadow-2xl p-6 flex flex-col justify-between translate-x-full transition-transform duration-300 overflow-y-auto">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-[#252F3D]">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-lg bg-orange-500 flex items-center justify-center text-white">
+            <i data-lucide="activity" class="w-5 h-5"></i>
+          </div>
+          <span class="font-display font-black text-xl text-white">COURTLY</span>
+        </div>
+        <button id="mobileMenuClose"
+          class="w-9 h-9 rounded-lg bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+            <div class="py-6 flex flex-col gap-3 font-medium">
+        <a href="index.html" class="text-slate-300 hover:text-orange-400 py-2 px-3 rounded-lg hover:bg-slate-800 transition-colors">Home 1</a>
+        <a href="home-2.html" class="text-orange-500 font-bold py-2 px-3 rounded-lg bg-orange-500/10">Home 2</a>
+        <a href="about.html" class="text-slate-300 hover:text-orange-400 py-2 px-3 rounded-lg hover:bg-slate-800 transition-colors">About</a>
+        <a href="programs.html" class="text-slate-300 hover:text-orange-400 py-2 px-3 rounded-lg hover:bg-slate-800 transition-colors">Programs</a>
+        <a href="coaches.html" class="text-slate-300 hover:text-orange-400 py-2 px-3 rounded-lg hover:bg-slate-800 transition-colors">Coaches</a>
+        <a href="facilities.html" class="text-slate-300 hover:text-orange-400 py-2 px-3 rounded-lg hover:bg-slate-800 transition-colors">Facilities</a>
+        <a href="leagues.html" class="text-slate-300 hover:text-orange-400 py-2 px-3 rounded-lg hover:bg-slate-800 transition-colors">Leagues & Events</a>
+        <a href="gallery.html" class="text-slate-300 hover:text-orange-400 py-2 px-3 rounded-lg hover:bg-slate-800 transition-colors">Gallery</a>
+        <a href="contact.html" class="text-slate-300 hover:text-orange-400 py-2 px-3 rounded-lg hover:bg-slate-800 transition-colors">Contact</a>
+        <a href="dashboard.html"
+          class="text-emerald-400 hover:text-emerald-300 py-2 px-3 rounded-lg bg-emerald-500/10 flex items-center gap-2 transition-colors">
+          <i data-lucide="layout-dashboard" class="w-4 h-4"></i> Dashboard
+        </a>
+      </div>
+    </div>
+
+        <!-- Action Toolbar inside Hamburger (Theme, RTL, Login, Join Academy) -->
+    <div class="pt-6 border-t border-[#252F3D] flex flex-col gap-3 flex-shrink-0">
+      <div class="flex items-center justify-between gap-2">
+        <div class="flex items-center gap-2">
+          <!-- Theme Toggle -->
+          <button
+            class="theme-toggle-btn w-10 h-10 flex-shrink-0 rounded-xl bg-surface border border-theme flex items-center justify-center text-slate-300 hover:text-orange-400 transition-all"
+            aria-label="Toggle theme">
+            <span class="theme-icon flex items-center justify-center">
+              <i data-lucide="sun" class="w-4 h-4"></i>
+            </span>
+          </button>
+
+          <!-- RTL Toggle -->
+          <button
+            class="rtl-toggle-btn w-10 h-10 flex-shrink-0 rounded-xl bg-surface border border-theme flex items-center justify-center text-slate-300 hover:text-orange-400 transition-all"
+            aria-label="Toggle layout direction" title="Toggle RTL/LTR Direction">
+            <span class="rtl-toggle-icon flex items-center justify-center">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="m16 3 4 4-4 4" />
+                <path d="M20 7H4" />
+                <path d="m8 21-4-4 4-4" />
+                <path d="M4 17h16" />
+              </svg>
+            </span>
+            <span class="sr-only rtl-toggle-text">RTL</span>
+          </button>
+        </div>
+
+        <!-- Login -->
+        <a href="login.html"
+          class="flex-1 py-2.5 px-3 rounded-xl border border-[#252F3D] text-center text-xs font-bold uppercase text-slate-300 hover:text-white flex items-center justify-center gap-1.5 bg-surface transition-colors">
+          <i data-lucide="user" class="w-4 h-4 text-orange-500"></i>
+          <span>Login</span>
+        </a>
+      </div>
+
+      <!-- Join Academy CTA -->
+      <a href="signup.html"
+        class="w-full btn-court-primary py-3 rounded-xl text-center text-xs font-bold uppercase flex items-center justify-center gap-2 tracking-wider">
+        <span>Join Academy</span>
+        <i data-lucide="arrow-right" class="w-4 h-4 ltr-only-icon"></i>
+      </a>
+    </div>
+  </div>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         HOME 2 - SECTION 1: FULL-SCREEN SPLIT-SCREEN BASKETBALL ACTION HERO
+         Completely different split composition: Left kinetic typography & right vertical action stage
+         ========================================================================== -->
+    <section class="min-h-screen pt-24 lg:pt-0 flex items-center relative overflow-hidden bg-[#0A0D11]">
+      <div class="w-full h-full grid grid-cols-1 lg:grid-cols-12 min-h-screen">
+
+        <!-- Left Hero Column: Bold Editorial Typography & Mission Statements -->
+        <div class="lg:col-span-7 flex flex-col justify-center px-6 sm:px-12 lg:px-20 py-16 lg:py-24 z-10">
+          <div
+            class="inline-flex items-center gap-3 px-3.5 py-1.5 rounded-md bg-orange-500/15 border border-orange-500/30 text-orange-400 text-xs uppercase font-mono tracking-wider mb-6 w-max">
+            <span class="w-2 h-2 rounded-full bg-orange-500 animate-ping"></span>
+            Edition 2026 // Next-Gen Basketball Laboratory
+          </div>
+
+          <h1
+            class="font-display font-black text-6xl sm:text-7xl xl:text-9xl uppercase tracking-tighter leading-[0.88] text-white mb-6">
+            BORN TO <br>
+            <span class="text-stroke-orange">DOMINATE</span> <br>
+            <span class="text-orange-500">THE COURT.</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 max-w-xl font-normal leading-relaxed mb-8">
+            An uncompromising athletic experience built for players who refuse average. We fuse sports science,
+            kinematic shooting diagnostics, and tactical tournament IQ into an elite training framework.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="programs.html"
+              class="btn-court-primary px-8 py-4 rounded-xl text-xs uppercase font-bold tracking-widest">
+              <span>View Training Syllabi</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 ltr-only-icon"></i>
+            </a>
+            <a href="contact.html"
+              class="btn-court-secondary px-8 py-4 rounded-xl text-xs uppercase font-bold tracking-widest">
+              <span>Schedule Combine Assessment</span>
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <!-- Editorial Ticker Strip -->
+          <div class="mt-14 pt-8 border-t border-theme/60 flex items-center gap-8 text-xs font-mono text-slate-400">
+            <div><span class="text-white font-bold block text-sm">FIBA CERTIFIED</span> Global Standards</div>
+            <div class="h-8 w-px bg-theme"></div>
+            <div><span class="text-white font-bold block text-sm">BIO-TRACKING</span> Shot Kinematics</div>
+            <div class="h-8 w-px bg-theme hidden sm:block"></div>
+            <div class="hidden sm:block"><span class="text-white font-bold block text-sm">PRO SCOUTING</span> NCAA
+              Direct Links</div>
+          </div>
+        </div>
+
+        <!-- Right Hero Column: Full-height Vertical Split Photographic Canvas -->
+        <div class="lg:col-span-5 relative min-h-[500px] lg:min-h-full">
+          <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=1200&q=85"
+            alt="Courtly Basketball Action Dramatic Silhouette" class="w-full h-full object-cover">
+          <div
+            class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#0A0D11] via-transparent to-transparent">
+          </div>
+
+          <!-- Floating Overlaid Player Card -->
+          <div
+            class="absolute bottom-8 left-8 right-8 p-6 rounded-2xl bg-black/85 backdrop-blur-md border border-orange-500/40 shadow-2xl">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-mono text-orange-400 font-bold uppercase tracking-wider">Highlight
+                Prospect</span>
+              <span class="text-xs px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold">5-Star
+                Recruit</span>
+            </div>
+            <h4 class="text-xl font-display font-black uppercase text-white">Carter Vance • Class of '26</h4>
+            <p class="text-xs text-slate-400 mt-1">"Courtly's pick-and-roll mechanics transformed my floor vision from
+              good to lethal."</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         HOME 2 - SECTION 2: INTERACTIVE ACADEMY STATISTICS & ACHIEVEMENTS
+         Data wall with athletic metrics, radar summaries, and animated stat blocks
+         ========================================================================== -->
+    <section class="py-24 relative bg-surface border-y border-theme">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+          <div class="lg:col-span-5">
+            <div class="text-xs font-mono text-orange-500 font-bold uppercase tracking-widest mb-2">// 02 — Data &
+              Performance</div>
+            <h2 class="text-4xl sm:text-5xl font-display font-black uppercase text-white leading-tight mb-6">
+              Numbers Never Lie. <br>
+              <span class="text-orange-500">Results Speak.</span>
+            </h2>
+            <p class="text-slate-300 text-sm leading-relaxed mb-8">
+              We monitor over 20 discrete athletic data points for every registered player—from release angle and
+              catch-and-shoot latency to lateral agility speed.
+            </p>
+
+            <div class="p-6 rounded-2xl bg-black/40 border border-theme">
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold uppercase text-slate-300">Average Shooting Improvement</span>
+                <span class="text-xs font-mono text-orange-400 font-bold">+24.8%</span>
+              </div>
+              <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden mb-6">
+                <div class="bg-orange-500 h-full rounded-full" style="width: 82%"></div>
+              </div>
+
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold uppercase text-slate-300">Vertical Leap Gains (12 Weeks)</span>
+                <span class="text-xs font-mono text-orange-400 font-bold">+5.2 Inches</span>
+              </div>
+              <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                <div class="bg-gradient-to-r from-orange-500 to-amber-400 h-full rounded-full" style="width: 76%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+            <div
+              class="p-8 rounded-3xl bg-[#10141B] border border-theme hover:border-orange-500/40 transition-all card-hover-fx">
+              <span class="text-xs font-mono text-orange-500 uppercase tracking-widest block mb-1">Metric 01</span>
+              <div class="font-display font-black text-5xl text-white counter-val mb-2" data-target="94"
+                data-suffix="%">0</div>
+              <h4 class="font-bold text-base text-slate-200 mb-2">College Scout Visibility</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">Varsity trainees evaluated directly by Division I & II
+                collegiate athletic recruiters.</p>
+            </div>
+
+            <div
+              class="p-8 rounded-3xl bg-[#10141B] border border-theme hover:border-orange-500/40 transition-all card-hover-fx">
+              <span class="text-xs font-mono text-orange-500 uppercase tracking-widest block mb-1">Metric 02</span>
+              <div class="font-display font-black text-5xl text-orange-500 counter-val mb-2" data-target="280"
+                data-suffix="k+">0</div>
+              <h4 class="font-bold text-base text-slate-200 mb-2">Tracked Practice Shots / Mo</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">Automated rapid-rebound sensors logging arc velocity and
+                shot release speed.</p>
+            </div>
+
+            <div
+              class="p-8 rounded-3xl bg-[#10141B] border border-theme hover:border-orange-500/40 transition-all card-hover-fx">
+              <span class="text-xs font-mono text-orange-500 uppercase tracking-widest block mb-1">Metric 03</span>
+              <div class="font-display font-black text-5xl text-white counter-val mb-2" data-target="6"
+                data-prefix="1:">0</div>
+              <h4 class="font-bold text-base text-slate-200 mb-2">Coach-To-Player Ratio</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">Guaranteed individualized feedback, film study reviews,
+                and personalized corrections.</p>
+            </div>
+
+            <div
+              class="p-8 rounded-3xl bg-[#10141B] border border-theme hover:border-orange-500/40 transition-all card-hover-fx">
+              <span class="text-xs font-mono text-orange-500 uppercase tracking-widest block mb-1">Metric 04</span>
+              <div class="font-display font-black text-5xl text-orange-500 counter-val mb-2" data-target="42"
+                data-suffix=" Titles">0</div>
+              <h4 class="font-bold text-base text-slate-200 mb-2">Tournament Championships</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">Dominant records in regional AAU circuits, high school
+                state cups, and summer showcases.</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         HOME 2 - SECTION 3: TRAINING PROGRAMS DISPLAYED USING AN EDITORIAL LAYOUT
+         Magazine-style horizontal split cards with large typography & athletic narrative
+         ========================================================================== -->
+    <section class="py-24 relative court-grid-lines">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-theme/60 pb-8">
+          <div>
+            <div class="text-xs font-mono text-orange-500 font-bold uppercase tracking-widest mb-2">// 03 — Curated
+              Tracks</div>
+            <h2 class="text-4xl sm:text-6xl font-display font-black uppercase text-white tracking-tight">
+              The <span class="text-orange-500">Curriculum</span> Matrix
+            </h2>
+          </div>
+          <p class="text-slate-400 max-w-sm text-xs sm:text-sm mt-4 md:mt-0">
+            A linear progression designed to build unflappable court composure, explosive first-step quickness, and
+            lights-out marksmanship.
+          </p>
+        </div>
+
+        <!-- Editorial Stack Cards -->
+        <div class="space-y-8">
+
+          <!-- Editorial Card 1 -->
+          <div
+            class="p-8 sm:p-10 rounded-3xl bg-surface border border-theme flex flex-col lg:flex-row items-center gap-8 card-hover-fx">
+            <div class="lg:w-1/2">
+              <div class="flex items-center gap-3 text-xs font-mono text-orange-400 uppercase tracking-widest mb-3">
+                <span>Phase I</span> • <span>Foundation & Motor Control</span>
+              </div>
+              <h3 class="text-3xl sm:text-4xl font-display font-black uppercase text-white mb-4">
+                The Playmaker & Ball-Handling Lab
+              </h3>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                Master the art of tight spaces. Two-ball rhythmic cadence, change of pace manipulations, crossover
+                timing, and protecting the ball against high-pressure on-ball traps.
+              </p>
+              <div class="grid grid-cols-3 gap-4 text-xs font-mono border-t border-theme/60 pt-4 mb-6 text-slate-400">
+                <div>Duration: <strong class="text-white block font-sans">8 Weeks</strong></div>
+                <div>Intensity: <strong class="text-orange-400 block font-sans">Level 02</strong></div>
+                <div>Focus: <strong class="text-white block font-sans">Dribble IQ</strong></div>
+              </div>
+              <a href="programs.html#handling"
+                class="btn-court-primary px-6 py-2.5 rounded-xl text-xs uppercase font-bold tracking-wider inline-flex">
+                Syllabus & Registration
+              </a>
+            </div>
+            <div class="lg:w-1/2 w-full h-80 sm:h-96 lg:h-[380px] rounded-2xl overflow-hidden img-zoom-container">
+              <img src="https://images.unsplash.com/photo-1471295253337-3ceaaedca402?auto=format&fit=crop&w=900&q=80"
+                alt="Fast Break Ball Handling" class="w-full h-full object-cover">
+            </div>
+          </div>
+
+          <!-- Editorial Card 2 -->
+          <div
+            class="p-8 sm:p-10 rounded-3xl bg-surface border border-theme flex flex-col lg:flex-row-reverse items-center gap-8 card-hover-fx">
+            <div class="lg:w-1/2">
+              <div class="flex items-center gap-3 text-xs font-mono text-orange-400 uppercase tracking-widest mb-3">
+                <span>Phase II</span> • <span>Precision Biomechanics</span>
+              </div>
+              <h3 class="text-3xl sm:text-4xl font-display font-black uppercase text-white mb-4">
+                Kinetic Shooting Mastery
+              </h3>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                Deconstruct and rebuild your shooting stroke from dip to release. Incorporating high-speed
+                catch-and-shoot drills, step-backs, and shooting under fatigue during crunch time.
+              </p>
+              <div class="grid grid-cols-3 gap-4 text-xs font-mono border-t border-theme/60 pt-4 mb-6 text-slate-400">
+                <div>Duration: <strong class="text-white block font-sans">12 Weeks</strong></div>
+                <div>Intensity: <strong class="text-orange-400 block font-sans">Level 04</strong></div>
+                <div>Focus: <strong class="text-white block font-sans">Shot Form</strong></div>
+              </div>
+              <a href="programs.html#shooting"
+                class="btn-court-primary px-6 py-2.5 rounded-xl text-xs uppercase font-bold tracking-wider inline-flex">
+                Syllabus & Registration
+              </a>
+            </div>
+            <div class="lg:w-1/2 w-full h-80 sm:h-96 lg:h-[380px] rounded-2xl overflow-hidden img-zoom-container">
+              <img src="https://ie-sports.com/cdn/shop/articles/4b16d21f-4d9e-4517-861a-3861ce3169f5.png?v=1714346121"
+                alt="Kinetic Shooting Mastery" class="w-full h-full object-cover object-top">
+            </div>
+          </div>
+
+          <!-- Editorial Card 3 -->
+          <div
+            class="p-8 sm:p-10 rounded-3xl bg-surface border border-theme flex flex-col lg:flex-row items-center gap-8 card-hover-fx">
+            <div class="lg:w-1/2">
+              <div class="flex items-center gap-3 text-xs font-mono text-orange-400 uppercase tracking-widest mb-3">
+                <span>Phase III</span> • <span>Varsity & Professional</span>
+              </div>
+              <h3 class="text-3xl sm:text-4xl font-display font-black uppercase text-white mb-4">
+                Elite Combine & Tactical IQ
+              </h3>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                Designed for varsity starters and college prospects. Comprehensive defensive rotations, blind-spot
+                weakside help, fast-break decision trees, and combine athletic testing.
+              </p>
+              <div class="grid grid-cols-3 gap-4 text-xs font-mono border-t border-theme/60 pt-4 mb-6 text-slate-400">
+                <div>Duration: <strong class="text-white block font-sans">Ongoing</strong></div>
+                <div>Intensity: <strong class="text-orange-400 block font-sans">Level 05 (Max)</strong></div>
+                <div>Focus: <strong class="text-white block font-sans">Game Speed</strong></div>
+              </div>
+              <a href="programs.html#combine"
+                class="btn-court-primary px-6 py-2.5 rounded-xl text-xs uppercase font-bold tracking-wider inline-flex">
+                Syllabus & Registration
+              </a>
+            </div>
+            <div class="lg:w-1/2 w-full h-80 sm:h-96 lg:h-[380px] rounded-2xl overflow-hidden img-zoom-container">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkfWokHvpN_QArk306QKBo63DlR0C3OOsdCdHTM412mQ-QbGMv5H5L9N8&s=10"
+                alt="Athlete Pre-Game Prep" class="w-full h-full object-cover">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         HOME 2 - SECTION 4: COACHING METHODOLOGY & TRAINING PROCESS
+         4-Step Systematic Player Transformation Pipeline
+         ========================================================================== -->
+    <section class="py-24 relative bg-surface border-y border-theme">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="text-xs font-mono text-orange-500 font-bold uppercase tracking-widest mb-2">// 04 — The
+            Methodology</div>
+          <h2 class="text-4xl sm:text-6xl font-display font-black uppercase text-white tracking-tight">
+            The 4-Step <span class="text-orange-500">Development Pipeline</span>
+          </h2>
+          <p class="text-slate-400 text-sm mt-3">
+            Every trainee undergoes our proprietary development protocol to guarantee measurable, repeatable progress.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+
+          <!-- Step 1 -->
+          <div
+            class="relative p-6 rounded-3xl bg-[#151B24] border border-theme flex flex-col justify-between card-hover-fx">
+            <div>
+              <span class="font-display font-black text-6xl text-orange-500 block mb-4">01</span>
+              <h3 class="text-xl font-display font-black uppercase text-white mb-2">Kinematic Assessment</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                We test initial baseline vertical jump, lane agility, shooting arc, and sprint speed to generate an
+                athlete biomechanical profile.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-theme/60 text-xs font-mono text-orange-400 font-bold">Week 1 // Diagnostic
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div
+            class="relative p-6 rounded-3xl bg-[#151B24] border border-theme flex flex-col justify-between card-hover-fx">
+            <div>
+              <span class="font-display font-black text-6xl text-orange-500 block mb-4">02</span>
+              <h3 class="text-xl font-display font-black uppercase text-white mb-2">Micro-Skill Blueprint</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                Tailored drills target individual weaknesses—whether eliminating wasted dip motions on catch-and-shoots
+                or lateral slide footwork.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-theme/60 text-xs font-mono text-orange-400 font-bold">Weeks 2-6 //
+              Isolation</div>
+          </div>
+
+          <!-- Step 3 -->
+          <div
+            class="relative p-6 rounded-3xl bg-[#151B24] border border-theme flex flex-col justify-between card-hover-fx">
+            <div>
+              <span class="font-display font-black text-6xl text-orange-500 block mb-4">03</span>
+              <h3 class="text-xl font-display font-black uppercase text-white mb-2">Contested Game Speed</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                Introducing live defenders, timed shot clocks, physical contact finishing, and high-stakes scrimmage
+                situations.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-theme/60 text-xs font-mono text-orange-400 font-bold">Weeks 7-10 //
+              Pressure</div>
+          </div>
+
+          <!-- Step 4 -->
+          <div
+            class="relative p-6 rounded-3xl bg-[#151B24] border border-theme flex flex-col justify-between card-hover-fx">
+            <div>
+              <span class="font-display font-black text-6xl text-orange-500 block mb-4">04</span>
+              <h3 class="text-xl font-display font-black uppercase text-white mb-2">Tournament Showcase</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                Placement in official Courtly Academy leagues with live video scouting reels distributed to collegiate
+                networks.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-theme/60 text-xs font-mono text-orange-400 font-bold">Week 11+ //
+              Competition</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         HOME 2 - SECTION 5: PLAYER TESTIMONIALS WITH A MODERN SLIDER / EDITORIAL CARDS
+         Modern testimonial cards with athlete quotes, ratings, and avatars
+         ========================================================================== -->
+    <section class="py-24 relative court-pattern">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+          <div>
+            <div class="text-xs font-mono text-orange-500 font-bold uppercase tracking-widest mb-2">// 05 — Word on the
+              Hardwood</div>
+            <h2 class="text-4xl sm:text-6xl font-display font-black uppercase text-white tracking-tight">
+              Player & Parent <span class="text-orange-500">Testimonials</span>
+            </h2>
+          </div>
+          <div class="flex items-center gap-2 mt-4 md:mt-0">
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Average Rating:</span>
+            <div class="flex text-orange-500">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <span class="text-xs font-mono text-white font-bold">(4.98 / 5.0)</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 grid-3-cards">
+
+          <!-- Testimonial 1 -->
+          <div class="p-8 rounded-3xl bg-surface border border-theme flex flex-col justify-between card-hover-fx">
+            <div>
+              <div class="flex text-orange-500 mb-4">
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              </div>
+              <p class="text-sm text-slate-300 italic leading-relaxed mb-6">
+                "The automated shooting lab and Dr. Dish CT equipment allowed me to log over 12,000 tracked attempts in
+                one summer. My varsity 3-point percentage jumped from 32% to 44%."
+              </p>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-theme/60">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
+                alt="Chloe Davenport" class="w-12 h-12 rounded-full object-cover border border-orange-500">
+              <div>
+                <h4 class="text-sm font-bold text-white">Chloe Davenport</h4>
+                <p class="text-xs text-orange-400">All-State Shooting Guard • Class '25</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="p-8 rounded-3xl bg-surface border border-theme flex flex-col justify-between card-hover-fx">
+            <div>
+              <div class="flex text-orange-500 mb-4">
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              </div>
+              <p class="text-sm text-slate-300 italic leading-relaxed mb-6">
+                "As parents, we've enrolled our son in four different basketball clinics. None compared to Courtly. The
+                coaches care deeply about character, sportsmanship, and mental discipline."
+              </p>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-theme/60">
+              <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80"
+                alt="David Sterling" class="w-12 h-12 rounded-full object-cover border border-orange-500">
+              <div>
+                <h4 class="text-sm font-bold text-white">David Sterling</h4>
+                <p class="text-xs text-orange-400">Parent of U-14 Youth Academy MVP</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="p-8 rounded-3xl bg-surface border border-theme flex flex-col justify-between card-hover-fx card-center-tab">
+            <div>
+              <div class="flex text-orange-500 mb-4">
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              </div>
+              <p class="text-sm text-slate-300 italic leading-relaxed mb-6">
+                "Coach Dave Miller's defensive slides and closeout angles changed how I play basketball. I won Defensive
+                Player of the Tournament at the State Cup because of his film breakdowns."
+              </p>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-theme/60">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
+                alt="Trevon Brooks" class="w-12 h-12 rounded-full object-cover border border-orange-500">
+              <div>
+                <h4 class="text-sm font-bold text-white">Trevon Brooks</h4>
+                <p class="text-xs text-orange-400">AAU Under-17 Captain</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         HOME 2 - SECTION 6: UPCOMING TOURNAMENTS & LEAGUE HIGHLIGHTS
+         Interactive schedule, dates, age brackets, registration status
+         ========================================================================== -->
+    <section class="py-24 relative bg-surface border-y border-theme">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+          <div>
+            <div class="text-xs font-mono text-orange-500 font-bold uppercase tracking-widest mb-2">// 06 — Sanctioned
+              Competitions</div>
+            <h2 class="text-4xl sm:text-6xl font-display font-black uppercase text-white tracking-tight">
+              Upcoming Leagues & <span class="text-orange-500">Highlights</span>
+            </h2>
+          </div>
+          <a href="leagues.html"
+            class="inline-flex items-center gap-2 text-xs uppercase font-bold text-orange-400 hover:text-orange-300 mt-4 md:mt-0">
+            View Complete Tournament Calendar <i data-lucide="arrow-right" class="w-4 h-4 ltr-only-icon"></i>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 grid-3-cards">
+
+          <!-- Tournament 1 -->
+          <div class="rounded-3xl bg-[#10141B] border border-theme p-6 card-hover-fx flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-mono text-orange-400 font-bold">DEC 05 - DEC 08</span>
+                <span
+                  class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Open
+                  Registration</span>
+              </div>
+              <h3 class="text-2xl font-display font-black uppercase text-white mb-2">Metro Winter Classic 2026</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                Premier regional high school showcase featuring 16 top-ranked varsity teams and collegiate scout
+                benches.
+              </p>
+              <div class="space-y-1.5 text-xs text-slate-300 border-t border-theme/60 pt-3 mb-6">
+                <div><strong>Location:</strong> Courtly Main Arena Alpha</div>
+                <div><strong>Bracket:</strong> U-17 & Varsity Boys/Girls</div>
+              </div>
+            </div>
+            <a href="leagues.html"
+              class="btn-court-primary w-full py-2.5 rounded-xl text-center text-xs font-bold uppercase tracking-wider">
+              Register Roster
+            </a>
+          </div>
+
+          <!-- Tournament 2 -->
+          <div class="rounded-3xl bg-[#10141B] border border-theme p-6 card-hover-fx flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-mono text-orange-400 font-bold">JAN 15 - JAN 17</span>
+                <span
+                  class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">Few
+                  Spots Left</span>
+              </div>
+              <h3 class="text-2xl font-display font-black uppercase text-white mb-2">FIBA 3x3 All-Star Blast</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                Fast-paced, physical 3x3 basketball on official outdoor shock-tiled courts with live music, shot clock,
+                and cash purse.
+              </p>
+              <div class="space-y-1.5 text-xs text-slate-300 border-t border-theme/60 pt-3 mb-6">
+                <div><strong>Location:</strong> Courtly Outdoor Arena</div>
+                <div><strong>Bracket:</strong> Open Men & Women Divisions</div>
+              </div>
+            </div>
+            <a href="leagues.html"
+              class="btn-court-primary w-full py-2.5 rounded-xl text-center text-xs font-bold uppercase tracking-wider">
+              Register Roster
+            </a>
+          </div>
+
+          <!-- Tournament 3 -->
+          <div class="rounded-3xl bg-[#10141B] border border-theme p-6 card-hover-fx flex flex-col justify-between card-center-tab">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-mono text-orange-400 font-bold">FEB 20 - FEB 22</span>
+                <span
+                  class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20">Coming
+                  Soon</span>
+              </div>
+              <h3 class="text-2xl font-display font-black uppercase text-white mb-2">Junior State Invitational</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                Youth developmental championship celebrating team passing, fundamental execution, and joyful competition
+                for rising athletes.
+              </p>
+              <div class="space-y-1.5 text-xs text-slate-300 border-t border-theme/60 pt-3 mb-6">
+                <div><strong>Location:</strong> Courts Beta & Gamma</div>
+                <div><strong>Bracket:</strong> Under-12 & Under-14</div>
+              </div>
+            </div>
+            <a href="leagues.html"
+              class="btn-court-secondary w-full py-2.5 rounded-xl text-center text-xs font-bold uppercase tracking-wider">
+              Notify When Open
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         HOME 2 - SECTION 7: LARGE MOTIVATIONAL CTA WITH ACADEMY REGISTRATION
+         Massive kinetic typographic closing with interactive enrollment box
+         ========================================================================== -->
+    <section class="py-14 sm:py-16 relative overflow-hidden bg-[#0A0D11] border-t border-theme">
+      <!-- Background athletic action element -->
+      <div class="absolute inset-0 z-0 opacity-10">
+        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=2000&q=80"
+          alt="Athletic Jump Cardio Training" class="w-full h-full object-cover">
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+        <div
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs uppercase font-mono tracking-widest mb-4">
+          <i data-lucide="zap" class="w-4 h-4 text-orange-500"></i>
+          Your Journey Starts on This Court
+        </div>
+
+        <h2
+          class="font-display font-black text-xl sm:text-3xl md:text-4xl lg:text-5xl uppercase tracking-tight text-white leading-tight mb-3 md:whitespace-nowrap">
+          GREATNESS IS <span class="text-orange-500">NOT GIVEN.</span> IT IS FORGED.
+        </h2>
+
+        <p class="text-xs sm:text-sm md:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed mb-6">
+          Step into our arena. Meet your dedicated coaching staff, experience our high-speed training technology, and
+          discover your true ceiling as a basketball athlete.
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="signup.html"
+            class="btn-court-primary px-8 py-3.5 rounded-xl text-xs uppercase font-bold tracking-widest shadow-xl">
+            Create Player Profile & Tryout
+          </a>
+          <a href="contact.html"
+            class="btn-court-secondary px-8 py-3.5 rounded-xl text-xs uppercase font-bold tracking-widest">
+            Book Facility Walkthrough
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       CONSISTENT PREMIUM FOOTER
+       ========================================================================== -->
+  <footer class="bg-[#0D1015] border-t border-[#252F3D] text-slate-400 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#252F3D]">
+
+        <!-- Brand Info -->
+        <div class="lg:col-span-2">
+          <a href="index.html" class="flex items-center gap-3 mb-4 group">
+            <div
+              class="w-10 h-10 rounded-xl bg-orange-500 flex items-center justify-center text-white shadow-lg shadow-amber-500/30">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M4.93 4.93l4.24 4.24"></path>
+                <path d="M14.83 9.17l4.24-4.24"></path>
+                <path d="M14.83 14.83l4.24 4.24"></path>
+                <path d="M9.17 14.83L4.93 19.07"></path>
+                <circle cx="12" cy="12" r="4"></circle>
+              </svg>
+            </div>
+            <div>
+              <span class="font-display font-black text-2xl tracking-wider text-white">COURTLY</span>
+              <span class="block text-[9px] uppercase font-bold tracking-[0.25em] text-orange-400">Basketball
+                Academy</span>
+            </div>
+          </a>
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm mb-6">
+            The elite proving ground for passionate basketball players. Precision skills coaching, Olympic strength
+            conditioning, and competitive tournament pathways in world-class facilities.
+          </p>
+
+          <!-- Social Media Icons with Individual Original Hover Effects -->
+          <div class="flex items-center gap-2.5">
+            <a href="#" class="social-icon-btn social-google bg-[#191E25] border border-[#252F3D] text-slate-300"
+              aria-label="Google">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon-btn social-facebook bg-[#191E25] border border-[#252F3D] text-slate-300"
+              aria-label="Facebook">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.595 0 9 1.583 9 4.615V8z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon-btn social-apple bg-[#191E25] border border-[#252F3D] text-slate-300"
+              aria-label="Apple">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.93-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.07 1.72-.94 2.74 1 .08 2.02-.49 2.64-1.24z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon-btn social-twitter bg-[#191E25] border border-[#252F3D] text-slate-300"
+              aria-label="Twitter">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon-btn social-instagram bg-[#191E25] border border-[#252F3D] text-slate-300"
+              aria-label="Instagram">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon-btn social-youtube bg-[#191E25] border border-[#252F3D] text-slate-300"
+              aria-label="YouTube">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon-btn social-linkedin bg-[#191E25] border border-[#252F3D] text-slate-300"
+              aria-label="LinkedIn">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-white font-display font-bold uppercase tracking-wider text-base mb-4">Quick Links</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="about.html" class="hover:text-orange-400 transition-colors">About Academy</a></li>
+            <li><a href="programs.html" class="hover:text-orange-400 transition-colors">Training Programs</a></li>
+            <li><a href="coaches.html" class="hover:text-orange-400 transition-colors">Coaching Roster</a></li>
+            <li><a href="facilities.html" class="hover:text-orange-400 transition-colors">Court Facilities</a></li>
+            <li><a href="leagues.html" class="hover:text-orange-400 transition-colors">Leagues & Events</a></li>
+            <li><a href="gallery.html" class="hover:text-orange-400 transition-colors">Photo & Video Gallery</a></li>
+          </ul>
+        </div>
+
+        <!-- Training Programs -->
+        <div>
+          <h4 class="text-white font-display font-bold uppercase tracking-wider text-base mb-4">Programs</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="programs.html#youth" class="hover:text-orange-400 transition-colors">Youth Basketball (Ages
+                7-12)</a></li>
+            <li><a href="programs.html#beginner" class="hover:text-orange-400 transition-colors">Beginner &
+                Intermediate</a></li>
+            <li><a href="programs.html#advanced" class="hover:text-orange-400 transition-colors">Advanced Player
+                Development</a></li>
+            <li><a href="programs.html#shooting" class="hover:text-orange-400 transition-colors">Shooting & Scoring
+                Mastery</a></li>
+            <li><a href="programs.html#defense" class="hover:text-orange-400 transition-colors">Defensive Lockdown
+                Camp</a></li>
+            <li><a href="programs.html#speed" class="hover:text-orange-400 transition-colors">Speed, Agility &
+                Footwork</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Information -->
+        <div>
+          <h4 class="text-white font-display font-bold uppercase tracking-wider text-base mb-4">Contact Info</h4>
+          <div class="space-y-3 text-xs">
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="map-pin" class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0"></i>
+              <span>742 Hardwood Boulevard, Sports District, NY 10001</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <i data-lucide="phone" class="w-4 h-4 text-orange-500 flex-shrink-0"></i>
+              <span>+1 (800) 555-COURT</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <i data-lucide="mail" class="w-4 h-4 text-orange-500 flex-shrink-0"></i>
+              <span>elite@courtlyacademy.com</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="clock" class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0"></i>
+              <span>Mon - Fri: 6:00 AM - 10:00 PM<br>Sat - Sun: 7:00 AM - 9:00 PM</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+        <div>
+          © 2026 COURTLY Basketball Academy. All Rights Reserved. Engineered for Athletic Greatness.
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-white transition-colors">Player Code of Conduct</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>

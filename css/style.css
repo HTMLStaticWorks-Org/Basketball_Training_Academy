@@ -1,0 +1,1416 @@
+/* ==========================================================================
+   COURTLY BASKETBALL TRAINING ACADEMY - MAIN STYLESHEET
+   Championship Gold & Obsidian Theme (Elite, Luxurious Black & Metallic Gold)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  --court-obsidian: #0A0D12;
+  --court-charcoal: #12161C;
+  --court-card-dark: #151B24;
+  --court-border-dark: #252F3D;
+  
+  --court-gold: #D4AF37;
+  --court-gold-light: #F3C04A;
+  --court-gold-glow: rgba(212, 175, 55, 0.38);
+  --court-gold-hover: #C59427;
+  --court-gold-dark: #A67C1E;
+  
+  --court-cream: #FDFBF7;
+  --court-grey: #8E959E;
+  --court-light-bg: #F8F9FA;
+  --court-card-light: #FFFFFF;
+  --court-border-light: #E2E6EA;
+  
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Space Grotesk', sans-serif;
+  
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* Fonts utility */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.03em;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Dark Mode (Default Obsidian) */
+body.dark {
+  background-color: var(--court-obsidian);
+  color: #E6EDF5;
+}
+
+body.dark .bg-surface {
+  background-color: var(--court-card-dark);
+}
+
+body.dark .border-theme {
+  border-color: var(--court-border-dark);
+}
+
+body.dark .text-body-muted {
+  color: #94A3B8;
+}
+
+/* ==========================================================================
+   LIGHT MODE DESIGN SYSTEM (Complete High-Contrast & Legibility Fix)
+   ========================================================================== */
+html.light,
+body.light {
+  background-color: var(--court-light-bg) !important;
+  color: #1E293B !important;
+}
+
+body.light .bg-surface {
+  background-color: var(--court-card-light) !important;
+}
+
+body.light .border-theme {
+  border-color: var(--court-border-light) !important;
+}
+
+body.light .text-body-muted {
+  color: #64748B !important;
+}
+
+/* Headings & Display Titles in Light Mode */
+body.light h1,
+body.light h2,
+body.light h3,
+body.light h4,
+body.light h5,
+body.light h6 {
+  color: #0F172A !important;
+}
+
+/* Global Text Utilities - High Contrast WCAG AAA */
+body.light .text-white {
+  color: #0F172A !important;
+}
+
+body.light .text-slate-100 {
+  color: #0F172A !important;
+}
+
+body.light .text-slate-200 {
+  color: #1E293B !important;
+}
+
+body.light .text-slate-300 {
+  color: #334155 !important;
+}
+
+body.light .text-slate-400 {
+  color: #475569 !important;
+}
+
+body.light .text-slate-500 {
+  color: #64748B !important;
+}
+
+body.light strong,
+body.light b {
+  color: #0F172A !important;
+}
+
+body.light label {
+  color: #1E293B !important;
+}
+
+body.light p {
+  color: inherit;
+}
+
+/* Deep Championship Gold on Light Backgrounds (4.5:1+ Contrast Ratio) */
+body.light .text-orange-500,
+body.light [class*="text-orange-500"]:not([class*="hover:"]):not([class*="group-hover:"]) {
+  color: #B8860B !important;
+  opacity: 1 !important;
+}
+
+body.light .text-orange-400 {
+  color: #9A6700 !important;
+}
+
+body.light .text-amber-500,
+body.light .text-amber-400 {
+  color: #9A6700 !important;
+}
+
+/* ==========================================================================
+   EXCEPTIONS: Elements that MUST retain white or distinct text in Light Mode
+   ========================================================================== */
+/* Primary Buttons in Light Mode */
+body.light .btn-court-primary {
+  background: linear-gradient(135deg, #F3C04A 0%, #C59427 100%) !important;
+  color: #0A0D12 !important;
+  box-shadow: 0 4px 18px rgba(184, 134, 11, 0.3) !important;
+}
+
+body.light .btn-court-primary * {
+  color: #0A0D12 !important;
+}
+
+body.light .btn-court-primary:hover {
+  background: #11161F !important;
+  border: 1.5px solid #D4AF37 !important;
+  color: #F3C04A !important;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35), 0 0 20px rgba(212, 175, 55, 0.5) !important;
+  transform: translateY(-3px) scale(1.02);
+}
+
+body.light .btn-court-primary:hover * {
+  color: #F3C04A !important;
+}
+
+/* Secondary Buttons in Light Mode */
+body.light .btn-court-secondary {
+  border: 1.5px solid #CBD5E1 !important;
+  background-color: #FFFFFF !important;
+  color: #1E293B !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+body.light .btn-court-secondary * {
+  color: #1E293B !important;
+}
+
+body.light .btn-court-secondary:hover {
+  background: linear-gradient(135deg, #F3C04A 0%, #C59427 100%) !important;
+  border-color: #B8860B !important;
+  color: #0A0D12 !important;
+  box-shadow: 0 12px 28px rgba(184, 134, 11, 0.45), 0 0 15px rgba(243, 192, 74, 0.35) !important;
+  transform: translateY(-3px) scale(1.02);
+}
+
+body.light .btn-court-secondary:hover * {
+  color: #0A0D12 !important;
+}
+
+/* Solid colored badges & pill tags */
+body.light .bg-orange-500.text-white,
+body.light .bg-orange-500 .text-white,
+body.light .bg-\[\#D4AF37\] .text-white,
+body.light [class*="bg-emerald"].text-white,
+body.light [class*="bg-red"].text-white,
+body.light [class*="bg-blue"].text-white {
+  color: #FFFFFF !important;
+}
+
+/* Image zoom overlays, gallery item cards & dark photo overlays where text sits directly on dark gradient */
+body.light .gallery-item .absolute .text-white,
+body.light .gallery-item .absolute h1,
+body.light .gallery-item .absolute h2,
+body.light .gallery-item .absolute h3,
+body.light .gallery-item .absolute h4,
+body.light .gallery-item .absolute h5,
+body.light .gallery-item .absolute h6,
+body.light .gallery-item .absolute span.text-white,
+body.light .gallery-item .absolute p,
+body.light .gallery-item [class*="from-black"] h1,
+body.light .gallery-item [class*="from-black"] h2,
+body.light .gallery-item [class*="from-black"] h3,
+body.light .gallery-item [class*="from-black"] h4,
+body.light .gallery-item [class*="from-black"] .text-white,
+body.light [class*="from-black"] h1,
+body.light [class*="from-black"] h2,
+body.light [class*="from-black"] h3,
+body.light [class*="from-black"] h4,
+body.light [class*="from-black"] h5,
+body.light [class*="from-black"] h6,
+body.light [class*="from-black"] .text-white,
+body.light [class*="from-black"] span.text-white,
+body.light [class*="from-black"] p,
+body.light [class*="from-black"] ~ div .text-white,
+body.light [class*="from-black"] ~ div h1,
+body.light [class*="from-black"] ~ div h2,
+body.light [class*="from-black"] ~ div h3,
+body.light [class*="from-black"] ~ div h4,
+body.light [class*="from-black"] ~ span.text-white,
+body.light .img-zoom-container .absolute .text-white,
+body.light .img-zoom-container .absolute h1,
+body.light .img-zoom-container .absolute h2,
+body.light .img-zoom-container .absolute h3,
+body.light .img-zoom-container .absolute h4,
+body.light [class*="bg-black/85"] .text-white,
+body.light [class*="bg-black/85"] h1,
+body.light [class*="bg-black/85"] h2,
+body.light [class*="bg-black/85"] h3,
+body.light [class*="bg-black/85"] h4,
+body.light [class*="bg-black/70"] .text-white,
+body.light [class*="bg-black/80"] .text-white,
+body.light [class*="bg-black/90"] .text-white,
+body.light #galleryLightbox h1,
+body.light #galleryLightbox h2,
+body.light #galleryLightbox h3,
+body.light #galleryLightbox h4,
+body.light #galleryLightbox .text-white,
+body.light #galleryLightbox .text-slate-200,
+body.light #galleryLightbox .text-slate-300,
+body.light #galleryLightbox .text-slate-400 {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75) !important;
+}
+
+body.light .gallery-item .absolute .text-orange-400,
+body.light .gallery-item .absolute .text-orange-500,
+body.light .gallery-item .absolute span.font-mono,
+body.light .gallery-item .gallery-lightbox-trigger,
+body.light .gallery-item [class*="from-black"] .text-orange-400,
+body.light .gallery-item [class*="from-black"] .gallery-lightbox-trigger,
+body.light [class*="from-black"] .text-orange-400,
+body.light [class*="from-black"] .text-orange-500,
+body.light [class*="from-black"] span.font-mono,
+body.light [class*="from-black"] .gallery-lightbox-trigger,
+body.light [class*="from-black"] ~ div .text-orange-400,
+body.light [class*="from-black"] ~ div .text-orange-500,
+body.light .img-zoom-container .absolute .text-orange-400,
+body.light #galleryLightbox .text-orange-400,
+body.light #galleryLightbox .text-orange-500,
+body.light #galleryLightbox span.font-mono {
+  color: #FBBF24 !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8) !important;
+}
+
+body.light .gallery-item .gallery-lightbox-trigger:hover,
+body.light [class*="from-black"] .gallery-lightbox-trigger:hover,
+body.light #galleryLightbox button:hover {
+  color: #FFFFFF !important;
+}
+
+body.light .gallery-item .absolute .text-slate-300,
+body.light .gallery-item .absolute .text-slate-400,
+body.light [class*="from-black"] .text-slate-300,
+body.light [class*="from-black"] .text-slate-400,
+body.light [class*="from-black"] ~ div .text-slate-300,
+body.light [class*="from-black"] ~ div .text-slate-400,
+body.light .img-zoom-container .absolute .text-slate-300,
+body.light .img-zoom-container .absolute .text-slate-400 {
+  color: #E2E8F0 !important;
+}
+
+/* Social icons in Light Mode */
+body.light .social-icon-btn:not(:hover),
+body.light footer .social-icon-btn:not(:hover),
+body.light .social-icon-btn[class*="bg-"]:not(:hover) {
+  background-color: #FFFFFF !important;
+  border: 1px solid #CBD5E1 !important;
+  color: #1E293B !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light .social-icon-btn:not(:hover) svg,
+body.light footer .social-icon-btn:not(:hover) svg {
+  fill: #1E293B !important;
+  color: #1E293B !important;
+}
+
+/* ==========================================================================
+   Surfaces, Cards & Hex Background Overrides in Light Mode
+   ========================================================================== */
+body.light .bg-surface,
+body.light .bg-\[\#151B24\],
+body.light .bg-\[\#191E25\],
+body.light .bg-\[\#15191E\],
+body.light .bg-\[\#10141B\],
+body.light .bg-\[\#12161C\],
+body.light .bg-\[\#11151A\],
+body.light .bg-\[\#11151B\],
+body.light .bg-\[\#1C222B\],
+body.light .bg-\[\#1A202A\],
+body.light .bg-\[\#1E252E\],
+body.light .bg-\[\#1D232C\],
+body.light .bg-\[\#0E1217\],
+body.light .bg-\[\#0D1015\] {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Section backgrounds */
+body.light section.bg-\[\#0A0D11\],
+body.light section.bg-\[\#0A0D12\],
+body.light section.bg-\[\#0D1015\] {
+  background-color: #F8F9FA !important;
+}
+
+/* Inset soft cards (previously dark translucent) */
+body.light .bg-black\/20:not(.absolute),
+body.light .bg-black\/30:not(.absolute),
+body.light .bg-black\/40:not(.absolute) {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* Video & photo overlays across dark & light themes (must remain dark scrim over imagery) */
+.video-overlay-scrim,
+body.light .video-overlay-scrim,
+body.light .img-zoom-container .absolute[class*="bg-black"],
+body.light .relative .absolute.inset-0[class*="bg-black"] {
+  background-color: rgba(0, 0, 0, 0.45) !important;
+}
+
+body.light .img-zoom-container:hover .absolute[class*="bg-black"],
+body.light .group:hover .video-overlay-scrim,
+body.light .group:hover .relative .absolute.inset-0[class*="bg-black"] {
+  background-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Borders */
+body.light .border-theme,
+body.light .border-\[\#252F3D\],
+body.light .border-slate-800,
+body.light .border-slate-800\/80,
+body.light .border-slate-800\/60,
+body.light .border-slate-700 {
+  border-color: #E2E8F0 !important;
+}
+
+/* ==========================================================================
+   Sticky Header & Navigation in Light Mode
+   ========================================================================== */
+body.light header.header-glass {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light header .font-display.text-white,
+body.light header a span.text-white {
+  color: #0F172A !important;
+}
+
+body.light header .nav-link {
+  color: #334155 !important;
+}
+
+body.light header .nav-link:hover {
+  color: #B8860B !important;
+}
+
+body.light header .nav-link.text-orange-500 {
+  color: #B8860B !important;
+}
+
+body.light header a[href="login.html"] {
+  color: #334155 !important;
+}
+
+body.light header a[href="login.html"]:hover {
+  color: #0F172A !important;
+}
+
+/* Navigation Dropdown Menus */
+.courtly-dropdown-menu {
+  background-color: #151B24;
+  border: 1px solid #252F3D;
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.65), 0 0 20px rgba(212, 175, 55, 0.1);
+}
+
+.courtly-dropdown-menu a:hover {
+  background-color: rgba(30, 41, 59, 0.7);
+}
+
+/* Light Mode Overrides for Navigation Dropdown */
+body.light .courtly-dropdown-menu {
+  background-color: #FFFFFF !important;
+  border: 1px solid #CBD5E1 !important;
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light .courtly-dropdown-menu a:hover {
+  background-color: #F8FAFC !important;
+}
+
+body.light .courtly-dropdown-menu .text-white {
+  color: #0F172A !important;
+}
+
+body.light .courtly-dropdown-menu .text-slate-400 {
+  color: #64748B !important;
+}
+
+body.light .courtly-dropdown-menu [class*="bg-slate-800"] {
+  background-color: #F1F5F9 !important;
+  border-color: #CBD5E1 !important;
+  color: #334155 !important;
+}
+
+body.light .theme-toggle-btn,
+body.light .rtl-toggle-btn {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+  color: #334155 !important;
+}
+
+body.light .theme-toggle-btn:hover,
+body.light .rtl-toggle-btn:hover {
+  border-color: #B8860B !important;
+  color: #B8860B !important;
+}
+
+/* Mobile Navigation Drawer */
+body.light #mobileNavDrawer {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+}
+
+body.light #mobileNavDrawer .border-\[\#252F3D\] {
+  border-color: #E2E8F0 !important;
+}
+
+body.light #mobileNavDrawer .text-white {
+  color: #0F172A !important;
+}
+
+body.light #mobileNavDrawer .text-slate-300 {
+  color: #334155 !important;
+}
+
+body.light #mobileNavDrawer a:hover {
+  background-color: #F1F5F9 !important;
+  color: #0F172A !important;
+}
+
+body.light #mobileNavDrawer button#mobileMenuClose {
+  background-color: #F1F5F9 !important;
+  color: #475569 !important;
+}
+
+body.light #mobileNavDrawer .theme-toggle-btn,
+body.light #mobileNavDrawer .rtl-toggle-btn,
+body.light #mobileNavDrawer a[href="login.html"] {
+  background-color: #F8FAFC !important;
+  border-color: #E2E8F0 !important;
+  color: #0F172A !important;
+}
+
+body.light #mobileNavDrawer .theme-toggle-btn:hover,
+body.light #mobileNavDrawer .rtl-toggle-btn:hover,
+body.light #mobileNavDrawer a[href="login.html"]:hover {
+  background-color: #FFFFFF !important;
+  border-color: #B8860B !important;
+  color: #B8860B !important;
+}
+
+/* ==========================================================================
+   Form Controls (Inputs, Selects, Textareas) in Light Mode
+   ========================================================================== */
+body.light input:not([type="checkbox"]):not([type="radio"]),
+body.light select,
+body.light textarea {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border: 1.5px solid #CBD5E1 !important;
+}
+
+body.light input:not([type="checkbox"]):not([type="radio"])::placeholder,
+body.light textarea::placeholder {
+  color: #94A3B8 !important;
+}
+
+body.light input:not([type="checkbox"]):not([type="radio"]):focus,
+body.light select:focus,
+body.light textarea:focus {
+  border-color: #B8860B !important;
+  box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.15) !important;
+  outline: none !important;
+}
+
+body.light select option {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+}
+
+body.light input[type="checkbox"] {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+}
+
+/* ==========================================================================
+   Login & Signup Cards in Light Mode
+   ========================================================================== */
+body.light .max-w-md.bg-\[\#151B24\],
+body.light .max-w-xl.bg-\[\#151B24\] {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Uniform Brand Logo Typography Across All Pages (Header, Auth Cards, Sidebar, Footer) */
+a[href="index.html"] .font-display {
+  color: #FFFFFF;
+}
+
+body.light a[href="index.html"] .font-display,
+body.light .max-w-md a[href="index.html"] .font-display,
+body.light .max-w-xl a[href="index.html"] .font-display,
+body.light header a[href="index.html"] .font-display,
+body.light footer a[href="index.html"] .font-display,
+body.light #dashboardSidebar a[href="index.html"] .font-display {
+  color: #0F172A !important;
+}
+
+body.light a[href="index.html"]:hover .font-display,
+body.light .max-w-md a[href="index.html"]:hover .font-display,
+body.light .max-w-xl a[href="index.html"]:hover .font-display,
+body.light header a[href="index.html"]:hover .font-display,
+body.light footer a[href="index.html"]:hover .font-display,
+body.light #dashboardSidebar a[href="index.html"]:hover .font-display {
+  color: #B8860B !important;
+}
+
+body.light a[href="index.html"] span.text-orange-400,
+body.light .max-w-md a[href="index.html"] span.text-orange-400,
+body.light .max-w-xl a[href="index.html"] span.text-orange-400,
+body.light header a[href="index.html"] span.text-orange-400,
+body.light footer a[href="index.html"] span.text-orange-400,
+body.light #dashboardSidebar a[href="index.html"] span.text-orange-400 {
+  color: #B8860B !important;
+}
+
+html.dark a[href="index.html"] .font-display,
+body.dark a[href="index.html"] .font-display {
+  color: #FFFFFF !important;
+}
+
+html.dark a[href="index.html"]:hover .font-display,
+body.dark a[href="index.html"]:hover .font-display {
+  color: #F3C04A !important;
+}
+
+html.dark a[href="index.html"] span.text-orange-400,
+body.dark a[href="index.html"] span.text-orange-400 {
+  color: #F3C04A !important;
+}
+
+body.light .social-icon-btn.bg-black\/40:not(:hover) {
+  background-color: #F8FAFC !important;
+  border-color: #CBD5E1 !important;
+  color: #1E293B !important;
+}
+
+body.light .social-icon-btn.bg-black\/40:not(:hover) svg {
+  fill: #1E293B !important;
+  color: #1E293B !important;
+}
+
+/* ==========================================================================
+   Index Hero Section Adaptability in Light Mode
+   ========================================================================== */
+body.light section.court-pattern > .absolute.inset-0.z-0 > div.bg-gradient-to-t {
+  background: linear-gradient(to top, #F8F9FA 0%, rgba(248, 249, 250, 0.88) 60%, rgba(248, 249, 250, 0.7) 100%) !important;
+}
+
+body.light section.court-pattern > .absolute.inset-0.z-0 > div.bg-gradient-to-r {
+  background: linear-gradient(to right, rgba(248, 249, 250, 0.95), transparent 40%, rgba(248, 249, 250, 0.95)) !important;
+}
+
+body.light section.court-pattern > .absolute.inset-0.z-0 > img {
+  filter: brightness(1.05) opacity(0.35) contrast(1.05) !important;
+}
+
+/* ==========================================================================
+   Dashboard Sidebar, Topbar, Tables & Cards in Light Mode
+   ========================================================================== */
+body.light #dashboardSidebar {
+  background-color: #FFFFFF !important;
+  border-right-color: #E2E8F0 !important;
+}
+
+body.light #dashboardSidebar .border-theme\/60 {
+  border-color: #E2E8F0 !important;
+}
+
+body.light #dashboardSidebar .font-display.text-white {
+  color: #0F172A !important;
+}
+
+body.light #dashboardSidebar .dashboard-nav-item:not(.bg-orange-500) {
+  color: #475569 !important;
+}
+
+body.light #dashboardSidebar .dashboard-nav-item:not(.bg-orange-500):hover {
+  background-color: #F1F5F9 !important;
+  color: #0F172A !important;
+}
+
+body.light #dashboardSidebar .dashboard-nav-item.bg-orange-500 {
+  background: linear-gradient(135deg, #F3C04A 0%, #C59427 100%) !important;
+  color: #0A0D12 !important;
+}
+
+body.light #dashboardSidebar .bg-\[\#0D1015\] {
+  background-color: #F8FAFC !important;
+  border-top-color: #E2E8F0 !important;
+}
+
+body.light header.h-16.bg-\[\#11151B\] {
+  background-color: #FFFFFF !important;
+  border-bottom-color: #E2E8F0 !important;
+}
+
+body.light #currentModuleTitle {
+  color: #0F172A !important;
+}
+
+body.light main.bg-\[\#0A0D11\] {
+  background-color: #F8F9FA !important;
+}
+
+/* Dashboard Welcome Hero Banner Contrast Protection (Light & Dark Mode) */
+#dashboardHeroBanner,
+body.light #dashboardHeroBanner {
+  background: linear-gradient(to right, #1E252E, #15191E, #12161C) !important;
+  border-color: rgba(212, 175, 55, 0.35) !important;
+}
+
+#dashboardHeroBanner h1,
+body.light #dashboardHeroBanner h1,
+#dashboardHeroBanner .text-white,
+body.light #dashboardHeroBanner .text-white {
+  color: #FFFFFF !important;
+}
+
+#dashboardHeroBanner p,
+body.light #dashboardHeroBanner p,
+#dashboardHeroBanner .text-slate-300,
+body.light #dashboardHeroBanner .text-slate-300 {
+  color: #CBD5E1 !important;
+}
+
+#dashboardHeroBanner .player-name-text,
+body.light #dashboardHeroBanner .player-name-text,
+#dashboardHeroBanner .text-orange-500,
+body.light #dashboardHeroBanner .text-orange-500,
+#dashboardHeroBanner .text-orange-400,
+body.light #dashboardHeroBanner .text-orange-400 {
+  color: #F3C04A !important;
+}
+
+/* Dashboard Tables */
+body.light table {
+  background-color: #FFFFFF !important;
+}
+
+body.light table thead tr {
+  background-color: #F8FAFC !important;
+}
+
+body.light table th {
+  color: #475569 !important;
+  border-bottom-color: #E2E8F0 !important;
+}
+
+body.light table td {
+  color: #1E293B !important;
+  border-bottom-color: #F1F5F9 !important;
+}
+
+body.light table tbody tr:hover {
+  background-color: #F8FAFC !important;
+}
+
+/* ==========================================================================
+   Public Pages Footer in Light Mode (100% Guaranteed High-Contrast Light Theme)
+   ========================================================================== */
+body.light footer {
+  background-color: #F8FAFC !important;
+  background-image: none !important;
+  border-top: 1px solid #E2E8F0 !important;
+  color: #475569 !important;
+}
+
+body.light footer .border-b,
+body.light footer .border-t,
+body.light footer [class*="border-"] {
+  border-color: #E2E8F0 !important;
+}
+
+body.light footer .font-display.text-white,
+body.light footer h4.text-white,
+body.light footer h4,
+body.light footer .text-white {
+  color: #0F172A !important;
+}
+
+body.light footer p,
+body.light footer .text-slate-400,
+body.light footer .text-slate-300,
+body.light footer li,
+body.light footer span:not(.text-orange-400):not(.text-orange-500) {
+  color: #475569 !important;
+}
+
+body.light footer .text-orange-400,
+body.light footer .text-orange-500 {
+  color: #B8860B !important;
+}
+
+body.light footer a {
+  color: #475569 !important;
+  transition: color 0.2s ease;
+}
+
+body.light footer a:hover {
+  color: #B8860B !important;
+}
+
+body.light footer .social-icon-btn:not(:hover),
+body.light footer .social-icon-btn[class*="bg-"]:not(:hover) {
+  background-color: #FFFFFF !important;
+  border: 1px solid #CBD5E1 !important;
+  color: #1E293B !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light footer .social-icon-btn:not(:hover) svg {
+  fill: #1E293B !important;
+  color: #1E293B !important;
+}
+
+/* Final CTA Sections in Light Mode (Above Footer) */
+body.light section[class*="bg-gradient-to-b"],
+body.light section[class*="from-[#0D1014]"] {
+  background: #F8F9FA !important;
+}
+
+body.light [class*="from-[#1C222B]"][class*="to-[#11151A]"] {
+  background: #FFFFFF !important;
+  border-color: #D4AF37 !important;
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light [class*="bg-[#10141B]"] {
+  background-color: #F8FAFC !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* ==========================================================================
+   Court Lines & Scrollbar in Light Mode
+   ========================================================================== */
+body.light .court-pattern {
+  background-image: radial-gradient(rgba(184, 134, 11, 0.12) 1px, transparent 1px);
+}
+
+body.light .court-grid-lines {
+  background-image: 
+    linear-gradient(to right, rgba(184, 134, 11, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(184, 134, 11, 0.08) 1px, transparent 1px);
+}
+
+body.light ::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+body.light ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #D4AF37 0%, #B8860B 100%);
+}
+
+/* Basketball Court Line Graphic Overlay (Championship Gold Tint) */
+.court-pattern {
+  background-image: radial-gradient(rgba(212, 175, 55, 0.09) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.court-grid-lines {
+  background-image: 
+    linear-gradient(to right, rgba(212, 175, 55, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(212, 175, 55, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Basketball Seam & Court SVG background accents */
+.basketball-seam {
+  stroke-dasharray: 6 6;
+  animation: seamRotate 30s linear infinite;
+}
+
+@keyframes seamRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Custom Scrollbar - Championship Metallic Gold */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0E13;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #F3C04A 0%, #C59427 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Glassmorphism Navigation */
+.header-glass {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.3s ease;
+}
+
+body.dark .header-glass {
+  background: rgba(18, 22, 28, 0.90);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+body.light .header-glass {
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Navigation Link Strict Single-Line Styling */
+.nav-link {
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  flex-shrink: 0 !important;
+  display: inline-block;
+}
+
+/* Championship Gold Buttons (Primary CTA) */
+.btn-court-primary {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #F3C04A 0%, #C59427 100%);
+  color: #0A0D12 !important;
+  font-weight: 800;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 18px var(--court-gold-glow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  letter-spacing: 0.04em;
+  z-index: 1;
+}
+
+/* Shimmer reflection light sweep on hover */
+.btn-court-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transition: left 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.btn-court-primary:hover::before {
+  left: 120%;
+}
+
+.btn-court-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.6), 0 0 20px rgba(243, 192, 74, 0.45) !important;
+  background: #0A0D12 !important;
+  border: 1.5px solid #F3C04A !important;
+  color: #F3C04A !important;
+}
+
+.btn-court-primary:hover * {
+  color: #F3C04A !important;
+}
+
+.btn-court-primary:active {
+  transform: translateY(-1px) scale(0.99);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+}
+
+.btn-court-primary svg,
+.btn-court-primary i {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-court-primary:hover svg,
+.btn-court-primary:hover i {
+  transform: translateX(4px);
+}
+
+[dir="rtl"] .btn-court-primary:hover svg,
+[dir="rtl"] .btn-court-primary:hover i {
+  transform: translateX(-4px);
+}
+
+/* Secondary CTA Buttons */
+.btn-court-secondary {
+  position: relative;
+  overflow: hidden;
+  border: 1.5px solid rgba(212, 175, 55, 0.7);
+  background: rgba(21, 27, 36, 0.65);
+  color: #F3C04A;
+  font-weight: 700;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  letter-spacing: 0.04em;
+  z-index: 1;
+}
+
+.btn-court-secondary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.22) 0%, rgba(243, 192, 74, 0.35) 100%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: -1;
+}
+
+.btn-court-secondary:hover::before {
+  opacity: 1;
+}
+
+.btn-court-secondary:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: linear-gradient(135deg, #F3C04A 0%, #C59427 100%) !important;
+  border-color: #F3C04A !important;
+  color: #0A0D12 !important;
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.55), 0 0 20px rgba(243, 192, 74, 0.4) !important;
+}
+
+.btn-court-secondary:hover * {
+  color: #0A0D12 !important;
+}
+
+.btn-court-secondary:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+.btn-court-secondary svg,
+.btn-court-secondary i {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-court-secondary:hover svg,
+.btn-court-secondary:hover i {
+  transform: translateX(4px);
+}
+
+[dir="rtl"] .btn-court-secondary:hover svg,
+[dir="rtl"] .btn-court-secondary:hover i {
+  transform: translateX(-4px);
+}
+
+/* Program Quick Jump Pills / Tabs */
+.program-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.1rem;
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1.5px solid var(--court-border-dark);
+  background-color: var(--court-card-dark);
+  color: #94A3B8;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+}
+
+/* Hover state in Dark Mode */
+.program-tab-btn:hover {
+  background: rgba(244, 123, 32, 0.18) !important;
+  border-color: #F47B20 !important;
+  color: #FFA500 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(244, 123, 32, 0.25);
+}
+
+/* Click / Active press feedback */
+.program-tab-btn:active {
+  transform: translateY(0) scale(0.96);
+}
+
+/* Active selected pill */
+.program-tab-btn.active {
+  background: linear-gradient(135deg, #F3C04A 0%, #C59427 100%) !important;
+  border-color: #D4AF37 !important;
+  color: #0A0D12 !important;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.45) !important;
+  font-weight: 800;
+}
+
+/* Light Mode Overrides for Program Tab Buttons */
+body.light .program-tab-btn {
+  background-color: #FFFFFF !important;
+  border: 1.5px solid #CBD5E1 !important;
+  color: #1E293B !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+body.light .program-tab-btn:hover {
+  background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%) !important;
+  border-color: #D4AF37 !important;
+  color: #B8860B !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(184, 134, 11, 0.25) !important;
+}
+
+body.light .program-tab-btn:active {
+  transform: translateY(0) scale(0.96);
+  background: #FDE68A !important;
+}
+
+body.light .program-tab-btn.active {
+  background: linear-gradient(135deg, #F3C04A 0%, #C59427 100%) !important;
+  border-color: #B8860B !important;
+  color: #0A0D12 !important;
+  box-shadow: 0 6px 20px rgba(184, 134, 11, 0.35) !important;
+  font-weight: 800;
+}
+
+/* 3D Card Hover & Tilt Effects */
+.card-hover-fx {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.card-hover-fx:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.45), 0 0 20px -3px rgba(212, 175, 55, 0.25);
+  border-color: rgba(212, 175, 55, 0.6) !important;
+}
+
+/* Image zoom on hover */
+.img-zoom-container {
+  overflow: hidden;
+}
+
+.img-zoom-container img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.img-zoom-container:hover img {
+  transform: scale(1.06);
+}
+
+/* Text Stroke / Outline for athletic typography */
+.text-stroke-orange, .text-stroke-gold {
+  -webkit-text-stroke: 1.5px #D4AF37;
+  color: transparent;
+}
+
+.text-stroke-white {
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.4);
+  color: transparent;
+}
+
+body.light .text-stroke-white {
+  -webkit-text-stroke: 1.5px rgba(15, 23, 42, 0.3);
+  color: transparent;
+}
+
+/* Animated badges */
+.badge-pulse {
+  position: relative;
+}
+.badge-pulse::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  width: 7px;
+  height: 7px;
+  background-color: #D4AF37;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  animation: pulse-ring 1.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: translateY(-50%) scale(0.9); opacity: 1; }
+  50% { transform: translateY(-50%) scale(2); opacity: 0; }
+  100% { transform: translateY(-50%) scale(0.9); opacity: 0; }
+}
+
+/* Marquee / Infinite Ticker */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 25s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-50%); }
+}
+
+[dir="rtl"] .marquee-track {
+  animation: marqueeScrollRtl 25s linear infinite;
+}
+
+@keyframes marqueeScrollRtl {
+  from { transform: translateX(0%); }
+  to { transform: translateX(50%); }
+}
+
+/* Floating animation */
+@keyframes floatSoft {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: floatSoft 5s ease-in-out infinite;
+}
+
+/* Social icons with individual original hover effects */
+.social-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-google:hover,
+body.light .social-google:hover,
+body.light footer .social-google:hover {
+  background: #EA4335 !important;
+  border-color: #EA4335 !important;
+  color: #FFFFFF !important;
+  transform: scale(1.12) rotate(4deg);
+  box-shadow: 0 8px 20px rgba(234, 67, 53, 0.45) !important;
+}
+
+.social-facebook:hover,
+body.light .social-facebook:hover,
+body.light footer .social-facebook:hover {
+  background: #1877F2 !important;
+  border-color: #1877F2 !important;
+  color: #FFFFFF !important;
+  transform: scale(1.12) rotate(-4deg);
+  box-shadow: 0 8px 20px rgba(24, 119, 242, 0.45) !important;
+}
+
+.social-apple:hover,
+body.light .social-apple:hover,
+body.light footer .social-apple:hover {
+  background: #000000 !important;
+  border-color: #000000 !important;
+  color: #FFFFFF !important;
+  transform: scale(1.12) translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45) !important;
+}
+
+.social-twitter:hover,
+body.light .social-twitter:hover,
+body.light footer .social-twitter:hover {
+  background: #0F1419 !important;
+  border-color: #0F1419 !important;
+  color: #FFFFFF !important;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 8px 20px rgba(15, 20, 25, 0.45) !important;
+}
+
+.social-instagram:hover,
+body.light .social-instagram:hover,
+body.light footer .social-instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
+  border-color: transparent !important;
+  color: #FFFFFF !important;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 8px 20px rgba(214, 36, 159, 0.45) !important;
+}
+
+.social-youtube:hover,
+body.light .social-youtube:hover,
+body.light footer .social-youtube:hover {
+  background: #FF0000 !important;
+  border-color: #FF0000 !important;
+  color: #FFFFFF !important;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.45) !important;
+}
+
+.social-linkedin:hover,
+body.light .social-linkedin:hover,
+body.light footer .social-linkedin:hover {
+  background: #0A66C2 !important;
+  border-color: #0A66C2 !important;
+  color: #FFFFFF !important;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 8px 20px rgba(10, 102, 194, 0.45) !important;
+}
+
+/* Ensure SVG icons always render brilliant white when button is hovered */
+.social-icon-btn:hover svg,
+.social-icon-btn:hover i,
+body.light .social-icon-btn:hover svg,
+body.light footer .social-icon-btn:hover svg {
+  color: #FFFFFF !important;
+  fill: #FFFFFF !important;
+}
+
+/* RTL Support Rules */
+[dir="rtl"] {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .space-x-reverse-rtl > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+[dir="rtl"] .ltr-only-icon {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .badge-pulse::after {
+  left: auto;
+  right: 8px;
+}
+
+/* Back to Top Floating Button */
+#backToTopBtn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 60;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+}
+
+#backToTopBtn.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+[dir="rtl"] #backToTopBtn {
+  right: auto;
+  left: 28px;
+}
+
+/* Toast Notification styling */
+#courtlyToast {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 100;
+  max-width: 380px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(120%);
+  opacity: 0;
+}
+
+#courtlyToast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+[dir="rtl"] #courtlyToast {
+  right: auto;
+  left: 24px;
+  transform: translateX(-120%);
+}
+
+[dir="rtl"] #courtlyToast.show {
+  transform: translateX(0);
+}
+
+/* Lightbox Modal */
+#galleryLightbox {
+  transition: opacity 0.3s ease;
+}
+
+/* Fallback styling for images if offline */
+img.courtly-img {
+  background-color: #151B24;
+  background-image: linear-gradient(135deg, rgba(212,175,55,0.15) 0%, rgba(10,13,18,0.9) 100%);
+  min-height: 100px;
+}
+
+/* ==========================================================================
+   Responsive Card Grid Alignments
+   - Mobile (< 640px / < 768px): 1 column (cards align one by one)
+   - Tab (640px - 1279px): 2 columns (2x2 cards, and 3rd card centered)
+   - Desktop (>= 1280px): 3 or 4 columns
+   ========================================================================== */
+@media (min-width: 640px) and (max-width: 1279.98px) {
+  .grid-3-cards {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .grid-3-cards > :nth-child(3):last-child,
+  .grid-3-cards > .card-center-tab,
+  .card-center-tab {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    width: 100% !important;
+    max-width: calc(50% - 1rem) !important;
+  }
+
+  .grid-3-cards.gap-6 > :nth-child(3):last-child,
+  .grid-3-cards.gap-6 > .card-center-tab {
+    max-width: calc(50% - 0.75rem) !important;
+  }
+}
+
+@media (max-width: 639.98px) {
+  .grid-3-cards {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .grid-3-cards > :nth-child(3):last-child,
+  .grid-3-cards > .card-center-tab,
+  .card-center-tab {
+    grid-column: auto !important;
+    max-width: 100% !important;
+    justify-self: stretch !important;
+  }
+}
