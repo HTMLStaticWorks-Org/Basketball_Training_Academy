@@ -152,18 +152,24 @@ function setupSidebarNav() {
 
       // Close mobile sidebar if open
       const sidebar = document.getElementById('dashboardSidebar');
-      if (sidebar && window.innerWidth < 1024) {
+      if (sidebar && window.innerWidth < 1280) {
         sidebar.classList.add('-translate-x-full');
       }
     });
   });
 
-  // Mobile sidebar toggler
+  // Mobile sidebar toggler & close button
   const sidebarToggle = document.getElementById('dashboardSidebarToggle');
+  const sidebarClose = document.getElementById('dashboardSidebarClose');
   const sidebar = document.getElementById('dashboardSidebar');
   if (sidebarToggle && sidebar) {
     sidebarToggle.addEventListener('click', () => {
       sidebar.classList.toggle('-translate-x-full');
+    });
+  }
+  if (sidebarClose && sidebar) {
+    sidebarClose.addEventListener('click', () => {
+      sidebar.classList.add('-translate-x-full');
     });
   }
 }

@@ -154,9 +154,18 @@ body.light .text-orange-400 {
   color: #9A6700 !important;
 }
 
+body.light a.text-orange-400:hover,
+body.light button.text-orange-400:hover {
+  color: #0F172A !important;
+}
+
 body.light .text-amber-500,
 body.light .text-amber-400 {
   color: #9A6700 !important;
+}
+
+body.light .text-emerald-400 {
+  color: #047857 !important;
 }
 
 /* ==========================================================================
@@ -287,6 +296,9 @@ body.light [class*="from-black"] .gallery-lightbox-trigger,
 body.light [class*="from-black"] ~ div .text-orange-400,
 body.light [class*="from-black"] ~ div .text-orange-500,
 body.light .img-zoom-container .absolute .text-orange-400,
+body.light .img-zoom-container .absolute.text-orange-400,
+body.light [class*="bg-black/"].text-orange-400,
+body.light [class*="bg-black/"] .text-orange-400,
 body.light #galleryLightbox .text-orange-400,
 body.light #galleryLightbox .text-orange-500,
 body.light #galleryLightbox span.font-mono {
@@ -295,9 +307,19 @@ body.light #galleryLightbox span.font-mono {
 }
 
 body.light .gallery-item .gallery-lightbox-trigger:hover,
-body.light [class*="from-black"] .gallery-lightbox-trigger:hover,
-body.light #galleryLightbox button:hover {
+body.light [class*="from-black"] .gallery-lightbox-trigger:hover {
   color: #FFFFFF !important;
+}
+
+body.light #galleryLightbox button.text-white,
+body.light #galleryLightbox button.text-white svg {
+  color: #0F172A !important;
+  text-shadow: none !important;
+}
+
+body.light #galleryLightbox button.text-white:hover,
+body.light #galleryLightbox button.text-white:hover svg {
+  color: #B8860B !important;
 }
 
 body.light .gallery-item .absolute .text-slate-300,
@@ -359,7 +381,10 @@ body.light section.bg-\[\#0D1015\] {
 /* Inset soft cards (previously dark translucent) */
 body.light .bg-black\/20:not(.absolute),
 body.light .bg-black\/30:not(.absolute),
-body.light .bg-black\/40:not(.absolute) {
+body.light .bg-black\/40:not(.absolute),
+body.light .bg-slate-900\/40:not(.absolute),
+body.light .bg-slate-900\/50:not(.absolute),
+body.light .bg-slate-800\/40:not(.absolute) {
   background-color: #F1F5F9 !important;
   border-color: #E2E8F0 !important;
 }
@@ -367,12 +392,12 @@ body.light .bg-black\/40:not(.absolute) {
 /* Video & photo overlays across dark & light themes (must remain dark scrim over imagery) */
 .video-overlay-scrim,
 body.light .video-overlay-scrim,
-body.light .img-zoom-container .absolute[class*="bg-black"],
+body.light .img-zoom-container .absolute.inset-0[class*="bg-black"],
 body.light .relative .absolute.inset-0[class*="bg-black"] {
   background-color: rgba(0, 0, 0, 0.45) !important;
 }
 
-body.light .img-zoom-container:hover .absolute[class*="bg-black"],
+body.light .img-zoom-container:hover .absolute.inset-0[class*="bg-black"],
 body.light .group:hover .video-overlay-scrim,
 body.light .group:hover .relative .absolute.inset-0[class*="bg-black"] {
   background-color: rgba(0, 0, 0, 0.25) !important;
@@ -591,6 +616,11 @@ body.light #dashboardSidebar a[href="index.html"] span.text-orange-400 {
   color: #B8860B !important;
 }
 
+body.light header a[href="index.html"] svg,
+body.light footer a[href="index.html"] svg {
+  color: #0F172A !important;
+}
+
 html.dark a[href="index.html"] .font-display,
 body.dark a[href="index.html"] .font-display {
   color: #FFFFFF !important;
@@ -760,7 +790,7 @@ body.light footer p,
 body.light footer .text-slate-400,
 body.light footer .text-slate-300,
 body.light footer li,
-body.light footer span:not(.text-orange-400):not(.text-orange-500) {
+body.light footer span:not(.text-orange-400):not(.text-orange-500):not(.font-display) {
   color: #475569 !important;
 }
 
@@ -869,6 +899,16 @@ body.light ::-webkit-scrollbar-thumb {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #D4AF37;
+}
+
+/* Hide visible scrollbar while preserving scroll behavior */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 /* Glassmorphism Navigation */
@@ -1303,6 +1343,12 @@ body.light footer .social-icon-btn:hover svg {
 [dir="rtl"] .badge-pulse::after {
   left: auto;
   right: 8px;
+}
+
+[dir="rtl"] .group\/dropdown > .absolute {
+  left: auto !important;
+  right: 0 !important;
+  transform-origin: top right !important;
 }
 
 /* Back to Top Floating Button */

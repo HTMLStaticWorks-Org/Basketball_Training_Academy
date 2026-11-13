@@ -424,9 +424,9 @@
               </div>
             </div>
 
-            <!-- Floating Athletic Badge -->
+            <!-- Athletic Metric Badge -->
             <div
-              class="absolute -bottom-6 -left-4 sm:-bottom-7 sm:-left-6 bg-[#191E25] border border-orange-500/40 rounded-2xl p-4 sm:p-5 shadow-2xl flex items-center gap-3.5 animate-float hidden sm:flex z-20">
+              class="mt-4 bg-[#191E25] border border-orange-500/40 rounded-2xl p-4 sm:p-5 shadow-2xl flex items-center gap-3.5 w-full">
               <div
                 class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-orange-500/20 text-orange-500 flex items-center justify-center flex-shrink-0">
                 <i data-lucide="target" class="w-6 h-6 sm:w-7 sm:h-7"></i>
@@ -450,23 +450,23 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
-          <!-- Asymmetric Visual Collage -->
-          <div class="lg:col-span-6 relative">
-            <div class="relative z-10 rounded-3xl overflow-hidden border border-theme shadow-2xl">
+          <!-- Visual Collage -->
+          <div class="lg:col-span-6 relative grid grid-cols-1 sm:grid-cols-12 gap-4">
+            <div class="sm:col-span-7 relative z-10 rounded-3xl overflow-hidden border border-theme shadow-2xl">
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhybgkISOPw9XRoHxnACUVej9hJcQT0s-fuiir0Xzab3VaQTrgDhSQzRQu&s=10"
-                alt="Courtly Pro Court System" class="w-full h-[420px] object-cover">
+                alt="Courtly Pro Court System" class="w-full h-[280px] sm:h-[400px] object-cover">
             </div>
-            <!-- Secondary overlapping offset image -->
+            <!-- Secondary image -->
             <div
-              class="hidden sm:block absolute -bottom-10 -right-8 w-64 h-64 rounded-2xl overflow-hidden border-4 border-[#15191E] shadow-2xl z-20 img-zoom-container">
+              class="sm:col-span-5 relative z-10 rounded-3xl overflow-hidden border border-theme shadow-2xl img-zoom-container">
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPdLjI66wOuRsAYOBbn1nju5TaEYDoH-tozolVk28nljCOWkxa4fW0D1CX&s=10"
-                alt="Tactical Blackboard Coaching" class="w-full h-full object-cover">
+                alt="Tactical Blackboard Coaching" class="w-full h-[260px] sm:h-[400px] object-cover object-top">
             </div>
             <!-- Decorative Accent Box -->
             <div
-              class="absolute -top-6 -left-6 w-32 h-32 bg-orange-500/10 rounded-3xl -z-0 border border-orange-500/20">
+              class="absolute -top-6 -left-6 w-32 h-32 bg-orange-500/10 rounded-3xl -z-0 border border-orange-500/20 pointer-events-none">
             </div>
           </div>
 
@@ -577,7 +577,7 @@
           <!-- Program 1: Beginner Basketball -->
           <div
             class="group relative rounded-3xl bg-surface border border-theme overflow-hidden card-hover-fx flex flex-col justify-between">
-            <div>
+            <div class="flex-1 flex flex-col">
               <div class="relative h-56 overflow-hidden img-zoom-container">
                 <img src="https://images.unsplash.com/photo-1577471488278-16eec37ffcc2?auto=format&fit=crop&w=700&q=80"
                   alt="Beginner Basketball Fundamentals" class="w-full h-full object-cover">
@@ -586,7 +586,7 @@
                   class="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-orange-400 text-xs font-bold uppercase px-3 py-1 rounded-full border border-orange-500/30">Ages
                   7 - 12</span>
               </div>
-              <div class="p-6">
+              <div class="p-6 flex-1 flex flex-col">
                 <h3
                   class="text-2xl font-display font-black uppercase text-white mb-2 group-hover:text-orange-500 transition-colors">
                   Beginner Basketball Training</h3>
@@ -594,7 +594,7 @@
                   Building foundational motor skills, two-hand dribbling control, proper shooting mechanics, and court
                   sportsmanship.
                 </p>
-                <div class="flex items-center justify-between py-3 border-t border-theme text-xs text-slate-300">
+                <div class="mt-auto flex items-center justify-between py-3 border-t border-theme text-xs text-slate-300">
                   <span>Duration: <strong>60 Mins</strong></span>
                   <span>Sessions: <strong>3x / Week</strong></span>
                 </div>
@@ -610,7 +610,7 @@
           <!-- Program 2: Advanced Player Development -->
           <div
             class="group relative rounded-3xl bg-surface border border-theme overflow-hidden card-hover-fx flex flex-col justify-between">
-            <div>
+            <div class="flex-1 flex flex-col">
               <div class="relative h-56 overflow-hidden img-zoom-container">
                 <img src="https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?auto=format&fit=crop&w=700&q=80"
                   alt="Advanced Player Development" class="w-full h-full object-cover">
@@ -619,7 +619,7 @@
                   class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-bold uppercase px-3 py-1 rounded-full shadow">Varsity
                   / AAU</span>
               </div>
-              <div class="p-6">
+              <div class="p-6 flex-1 flex flex-col">
                 <h3
                   class="text-2xl font-display font-black uppercase text-white mb-2 group-hover:text-orange-500 transition-colors">
                   Advanced Player Development</h3>
@@ -627,7 +627,7 @@
                   Live situational decision making, offensive counter-moves, spatial reads, and aggressive transition
                   finishing.
                 </p>
-                <div class="flex items-center justify-between py-3 border-t border-theme text-xs text-slate-300">
+                <div class="mt-auto flex items-center justify-between py-3 border-t border-theme text-xs text-slate-300">
                   <span>Duration: <strong>90 Mins</strong></span>
                   <span>Sessions: <strong>4x / Week</strong></span>
                 </div>
@@ -642,8 +642,8 @@
 
           <!-- Program 3: Professional Skills Training -->
           <div
-            class="group relative rounded-3xl bg-surface border border-theme overflow-hidden card-hover-fx flex flex-col justify-between card-center-tab">
-            <div>
+            class="group relative rounded-3xl bg-surface border border-theme overflow-hidden card-hover-fx flex flex-col justify-between">
+            <div class="flex-1 flex flex-col">
               <div class="relative h-56 overflow-hidden img-zoom-container">
                 <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&w=700&q=80"
                   alt="Professional Skills Training" class="w-full h-full object-cover">
@@ -652,7 +652,7 @@
                   class="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-orange-400 text-xs font-bold uppercase px-3 py-1 rounded-full border border-orange-500/30">NCAA
                   / Pro Level</span>
               </div>
-              <div class="p-6">
+              <div class="p-6 flex-1 flex flex-col">
                 <h3
                   class="text-2xl font-display font-black uppercase text-white mb-2 group-hover:text-orange-500 transition-colors">
                   Professional Skills Training</h3>
@@ -660,7 +660,7 @@
                   Micro-separation creation, high pick-and-roll dissection, mid-range footwork mastery, and combine
                   athletic testing.
                 </p>
-                <div class="flex items-center justify-between py-3 border-t border-theme text-xs text-slate-300">
+                <div class="mt-auto flex items-center justify-between py-3 border-t border-theme text-xs text-slate-300">
                   <span>Duration: <strong>120 Mins</strong></span>
                   <span>Sessions: <strong>5x / Week</strong></span>
                 </div>
@@ -676,7 +676,7 @@
           <!-- Program 4: Shooting & Scoring Academy -->
           <div
             class="group relative rounded-3xl bg-surface border border-theme overflow-hidden card-hover-fx flex flex-col justify-between">
-            <div>
+            <div class="flex-1 flex flex-col">
               <div class="relative h-56 overflow-hidden img-zoom-container">
                 <img
                   src="https://vucommodores.com/imgproxy/R5BlKbw_8ota7FFzCrVvGEhb9UZZksQLCzzLgGBkKRw/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Z1Y29tbW9kb3Jlcy1wcm9kLzIwMjYvMTEvMDMvTDNBaU9kZ09uSWxBaTFpQm5JZm9UN0xhOVF6Z0ZkMjNMNlRXbG1INS5qcGc.jpg"
@@ -686,7 +686,7 @@
                   class="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-orange-400 text-xs font-bold uppercase px-3 py-1 rounded-full border border-orange-500/30">Specialty
                   Track</span>
               </div>
-              <div class="p-6">
+              <div class="p-6 flex-1 flex flex-col">
                 <h3
                   class="text-2xl font-display font-black uppercase text-white mb-2 group-hover:text-orange-500 transition-colors">
                   Shooting & Scoring Academy</h3>
@@ -694,7 +694,7 @@
                   Laser tracking for release angle and trajectory. Catch-and-shoot, off-screen flare cuts, and deep
                   range perimeter bombs.
                 </p>
-                <div class="flex items-center justify-between py-3 border-t border-theme text-xs text-slate-300">
+                <div class="mt-auto flex items-center justify-between py-3 border-t border-theme text-xs text-slate-300">
                   <span>Duration: <strong>75 Mins</strong></span>
                   <span>Sessions: <strong>4x / Week</strong></span>
                 </div>
@@ -710,7 +710,7 @@
           <!-- Program 5: Defensive Skills Training -->
           <div
             class="group relative rounded-3xl bg-surface border border-theme overflow-hidden card-hover-fx flex flex-col justify-between">
-            <div>
+            <div class="flex-1 flex flex-col">
               <div class="relative h-56 overflow-hidden img-zoom-container">
                 <img
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNqJE6hlMguMRcsuOVuDtd62LigSk6-QtOZbmz0BPmi4sLAfi0514rKds&s=10"
@@ -720,7 +720,7 @@
                   class="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-orange-400 text-xs font-bold uppercase px-3 py-1 rounded-full border border-orange-500/30">High
                   Intensity</span>
               </div>
-              <div class="p-6">
+              <div class="p-6 flex-1 flex flex-col">
                 <h3
                   class="text-2xl font-display font-black uppercase text-white mb-2 group-hover:text-orange-500 transition-colors">
                   Defensive Skills Training</h3>
@@ -728,7 +728,7 @@
                   Lateral slide mechanics, closeouts without fouling, passing lane anticipation, rim protection, and
                   transition stops.
                 </p>
-                <div class="flex items-center justify-between py-3 border-t border-theme text-xs text-slate-300">
+                <div class="mt-auto flex items-center justify-between py-3 border-t border-theme text-xs text-slate-300">
                   <span>Duration: <strong>75 Mins</strong></span>
                   <span>Sessions: <strong>3x / Week</strong></span>
                 </div>
@@ -744,7 +744,7 @@
           <!-- Program 6: Youth Basketball Development -->
           <div
             class="group relative rounded-3xl bg-surface border border-theme overflow-hidden card-hover-fx flex flex-col justify-between">
-            <div>
+            <div class="flex-1 flex flex-col">
               <div class="relative h-56 overflow-hidden img-zoom-container">
                 <img src="https://storage.googleapis.com/usabfoundation-org/2025/10/f796083c-ey-feature.jpg"
                   alt="Youth Basketball Development" class="w-full h-full object-cover">
@@ -753,7 +753,7 @@
                   class="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-orange-400 text-xs font-bold uppercase px-3 py-1 rounded-full border border-orange-500/30">Future
                   Stars</span>
               </div>
-              <div class="p-6">
+              <div class="p-6 flex-1 flex flex-col">
                 <h3
                   class="text-2xl font-display font-black uppercase text-white mb-2 group-hover:text-orange-500 transition-colors">
                   Youth Basketball Development</h3>
@@ -761,7 +761,7 @@
                   Igniting a lifelong passion for hoops. Dynamic agility drills, game rules, teamwork values, and joyful
                   competitive scrimmage.
                 </p>
-                <div class="flex items-center justify-between py-3 border-t border-theme text-xs text-slate-300">
+                <div class="mt-auto flex items-center justify-between py-3 border-t border-theme text-xs text-slate-300">
                   <span>Duration: <strong>60 Mins</strong></span>
                   <span>Sessions: <strong>3x / Week</strong></span>
                 </div>
@@ -933,8 +933,8 @@
             </h2>
           </div>
           <a href="facilities.html"
-            class="inline-flex items-center gap-2 text-sm font-bold text-orange-400 hover:text-orange-300 mt-4 md:mt-0">
-            Tour All 45,000 Sq Ft Facilities <i data-lucide="arrow-right" class="w-4 h-4 ltr-only-icon"></i>
+            class="group inline-flex items-center gap-2 text-sm font-bold text-orange-400 hover:text-orange-500 hover:underline underline-offset-4 transition-all duration-200 mt-4 md:mt-0">
+            Tour All 45,000 Sq Ft Facilities <i data-lucide="arrow-right" class="w-4 h-4 ltr-only-icon transition-transform duration-200 group-hover:translate-x-1.5"></i>
           </a>
         </div>
 
@@ -983,7 +983,7 @@
               <span class="absolute bottom-3 left-3 text-xs font-mono font-bold text-orange-400 uppercase">Dr. Dish
                 All-Star CT</span>
             </div>
-            <h3 class="text-xl font-display font-black uppercase text-white mb-2">Automated <br>Shooting Lab</h3>
+            <h3 class="text-xl font-display font-black uppercase text-white mb-2">Automated Shooting Lab</h3>
             <p class="text-xs text-slate-400 leading-relaxed">
               6 automated rapid-fire rebounding guns tracking release angle, shot frequency, and heat-map hotspots in
               real time.
@@ -1021,20 +1021,20 @@
 
         <!-- Animated Counters Row -->
         <div
-          class="grid grid-cols-2 lg:grid-cols-4 gap-6 p-8 rounded-3xl bg-[#10141B] border border-orange-500/30 mb-20 shadow-2xl">
-          <div class="text-center p-4 border-r border-theme/40 last:border-0">
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-8 rounded-3xl bg-[#10141B] border border-orange-500/30 mb-20 shadow-2xl">
+          <div class="text-center p-4 border-b border-theme/40 sm:border-b-0 sm:border-r lg:border-r">
             <div class="font-display font-black text-4xl sm:text-6xl text-orange-500 counter-val" data-target="1450"
               data-suffix="+">0</div>
             <p class="text-xs sm:text-sm uppercase tracking-wider text-slate-400 font-semibold mt-2">Athletes Trained
             </p>
           </div>
-          <div class="text-center p-4 border-r border-theme/40 last:border-0">
+          <div class="text-center p-4 border-b border-theme/40 sm:border-b-0 lg:border-r">
             <div class="font-display font-black text-4xl sm:text-6xl text-white counter-val" data-target="96"
               data-suffix="%">0</div>
             <p class="text-xs sm:text-sm uppercase tracking-wider text-slate-400 font-semibold mt-2">College Placement
               Rate</p>
           </div>
-          <div class="text-center p-4 border-r border-theme/40 last:border-0">
+          <div class="text-center p-4 border-b border-theme/40 sm:border-b-0 sm:border-r lg:border-r">
             <div class="font-display font-black text-4xl sm:text-6xl text-orange-500 counter-val" data-target="38"
               data-prefix="#">0</div>
             <p class="text-xs sm:text-sm uppercase tracking-wider text-slate-400 font-semibold mt-2">Championship
@@ -1089,7 +1089,7 @@
                 alt="2026 AAU State Champions Celebration" class="w-full h-[400px] object-cover">
             </div>
             <div
-              class="absolute -bottom-6 -left-6 bg-orange-500 text-white p-5 rounded-2xl shadow-xl max-w-xs hidden sm:block">
+              class="mt-4 bg-orange-500 text-white p-5 rounded-2xl shadow-xl w-full">
               <span class="block font-display font-black text-2xl uppercase">2026 AAU State Champions</span>
               <span class="text-xs opacity-90">Courtly Under-18 Elite Squad</span>
             </div>
