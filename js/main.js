@@ -87,6 +87,22 @@ function applyRTL(isRTL) {
     document.documentElement.setAttribute('dir', 'ltr');
     document.documentElement.classList.remove('rtl');
   }
+
+  const drawer = document.getElementById('mobileNavDrawer');
+  const backdrop = document.getElementById('mobileNavBackdrop');
+  if (drawer) {
+    const isClosed = !backdrop || backdrop.classList.contains('hidden');
+    if (isRTL) {
+      drawer.classList.remove('right-0', 'border-l', 'translate-x-full');
+      drawer.classList.add('left-0', 'border-r');
+      if (isClosed) drawer.classList.add('-translate-x-full');
+    } else {
+      drawer.classList.remove('left-0', 'border-r', '-translate-x-full');
+      drawer.classList.add('right-0', 'border-l');
+      if (isClosed) drawer.classList.add('translate-x-full');
+    }
+  }
+
   localStorage.setItem('courtly_rtl', isRTL ? 'true' : 'false');
   updateRTLButtons(isRTL);
 }
@@ -150,6 +166,7 @@ function initMobileNav() {
 
   function closeDrawer() {
     const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+    drawer.classList.remove('translate-x-full', '-translate-x-full');
     if (isRTL) {
       drawer.classList.add('-translate-x-full');
     } else {
